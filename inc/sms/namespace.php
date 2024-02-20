@@ -1,13 +1,13 @@
 <?php
 /**
- * Namespace functions.
+ * SMS: Namespace functions.
  *
  * @package wp-messaging
  */
 
-namespace Souptik\WPMessaging;
+namespace Souptik\WPMessaging\SMS;
 
-// Bootstrap the plugin!
+// Bootstrap the module!
 spl_autoload_register( __NAMESPACE__ . '\\autoload' );
 bootstrap();
 
@@ -22,7 +22,7 @@ function autoload( $class = '' ) {
 		return;
 	}
 
-	$path          = SD_WP_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR;
+	$path          = SD_WP_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc/sms' . DIRECTORY_SEPARATOR;
 	$prefix_length = strlen( __NAMESPACE__ );
 	$class         = substr( $class, $prefix_length + 1 );
 	$class         = strtolower( $class );
@@ -46,14 +46,21 @@ function autoload( $class = '' ) {
  * Bootstrap plugin.
  */
 function bootstrap(): void {
-	// Load different messaging service classes.
-	require_once SD_WP_MESSAGING_PATH . '/inc/sms/namespace.php';
+	// Add this service to the list of available services.
+	add_filter(
+		'wp_messaging_services',
+		function( array $services = [] ): array {
+			$services[] = [
+				'name'            => __( 'SMS: WP Messaging', 'wp-messaging' ),
+				'menu_slug'       => 'wp-messaging-sms',
+				'menu_capability' => apply_filters( 'wp_messaging_sms_user_capability', 'manage_options' ),
+				'menu_renderer'     => array( Admin::get_instance(), 'options_page' )
+			];
 
-	// Admin stuff.
-	add_action(
-		'init',
-		function () {
-			Admin::get_instance()->setup();
+			// Return the services.
+			return $services;
 		}
 	);
 }
+
+
