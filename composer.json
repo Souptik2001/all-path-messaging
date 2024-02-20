@@ -1,0 +1,18 @@
+{
+    "name": "souptik/wp-messaging",
+    "description": "Limitless Communication: All-in-One, super scalable, messaging Solution for WordPress.",
+    "require": {
+        "utopia-php/messaging": "^0.10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Souptik\\WPMessaging\\": "inc/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Souptik Datta",
+            "email": "souptikdatta2001@gmail.com"
+        }
+    ]
+}
