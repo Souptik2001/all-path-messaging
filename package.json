@@ -1,0 +1,24 @@
+{
+  "name": "wp-messaging",
+  "version": "1.0.0",
+  "description": "Limitless Communication: All-in-One, super scalable, messaging Solution for WordPress.",
+  "scripts": {
+    "start": "npm ci & composer install",
+    "start-env": "wp-env start",
+    "stop-env": "wp-env stop",
+    "destroy-env": "wp-env destroy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Souptik2001/wp-messaging.git"
+  },
+  "author": "Souptik Datta",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/env": "^9.9.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Souptik2001/wp-messaging/issues"
+  },
+  "homepage": "https://github.com/Souptik2001/wp-messaging#readme"
+}
