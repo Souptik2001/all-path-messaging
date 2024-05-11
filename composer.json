@@ -4,6 +4,9 @@
     "require": {
         "utopia-php/messaging": "^0.10.0"
     },
+    "require-dev": {
+        "roots/wordpress": "6.5.3"
+    },
     "autoload": {
         "psr-4": {
             "Souptik\\WPMessaging\\": "inc/"
@@ -14,5 +17,10 @@
             "name": "Souptik Datta",
             "email": "souptikdatta2001@gmail.com"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "roots/wordpress-core-installer": true
+        }
+    }
 }

@@ -1,3 +1,4 @@
 {
+    "core": "./wordpress",
     "plugins": [ ".", "https://downloads.wordpress.org/plugin/query-monitor.3.16.2.zip" ]
 }
