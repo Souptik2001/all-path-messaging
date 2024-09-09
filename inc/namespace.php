@@ -14,29 +14,36 @@ bootstrap();
 /**
  * Autoloader.
  *
- * @param  string $class
+ * @param  string $class_name Class name.
+ *
  * @return void
  */
-function autoload( $class = '' ) {
-	if ( 0 !== strpos( $class, __NAMESPACE__ ) ) {
+function autoload( string $class_name = '' ): void {
+	// Check if namespace is correct.
+	if ( 0 !== strpos( $class_name, __NAMESPACE__ ) ) {
 		return;
 	}
 
+	// Format the namespace.
 	$path          = SD_WP_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR;
 	$prefix_length = strlen( __NAMESPACE__ );
-	$class         = substr( $class, $prefix_length + 1 );
-	$class         = strtolower( $class );
+	$class_name    = substr( $class_name, $prefix_length + 1 );
+	$class_name    = strtolower( $class_name );
 	$file          = '';
-	$last_ns_pos   = strripos( $class, '\\' );
+	$last_ns_pos   = strripos( $class_name, '\\' );
 
+	// Add the namespace.
 	if ( false !== $last_ns_pos ) {
-		$namespace = substr( $class, 0, $last_ns_pos );
-		$class     = substr( $class, $last_ns_pos + 1 );
-		$file      = str_replace( '\\', DIRECTORY_SEPARATOR, $namespace ) . DIRECTORY_SEPARATOR;
+		$namespace  = substr( $class_name, 0, $last_ns_pos );
+		$class_name = substr( $class_name, $last_ns_pos + 1 );
+		$file       = str_replace( '\\', DIRECTORY_SEPARATOR, $namespace ) . DIRECTORY_SEPARATOR;
 	}
 
-	$file .= 'class-' . str_replace( '_', '-', $class ) . '.php';
+	// Create the file name.
+	$file .= 'class-' . str_replace( '_', '-', $class_name ) . '.php';
 	$path .= $file;
+
+	// Load the file.
 	if ( file_exists( $path ) ) {
 		require_once $path;
 	}
@@ -44,6 +51,8 @@ function autoload( $class = '' ) {
 
 /**
  * Bootstrap plugin.
+ *
+ * @return void
  */
 function bootstrap(): void {
 	// Load different messaging service classes.

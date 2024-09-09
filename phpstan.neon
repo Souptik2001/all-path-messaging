@@ -1,0 +1,13 @@
+parameters:
+	level: max
+	scanFiles:
+	  - wp-messaging.php
+	bootstrapFiles:
+	  - .tests/static-analysis/bootstrap.php
+	scanDirectories:
+		- wordpress
+	paths:
+		- inc
+	ignoreErrors:
+		- '#Parameter \#1 \$value of function strval expects bool\|float\|int\|resource\|string\|null, (.*) given.#'
+		- '#Constant SD_WP_MESSAGING_PATH not found.#'

@@ -7,20 +7,32 @@
 
 namespace Souptik\WPMessaging;
 
+/**
+ * Admin class.
+ */
 class Admin {
 
-	private static $_instance = null;
+	/**
+	 * Current instance.
+	 *
+	 * @var self
+	 */
+	private static $instance = null;
 
 	/**
 	 * Get current instance.
 	 *
-	 * @return object
+	 * @return self
 	 */
 	public static function get_instance(): self {
-		if ( ! self::$_instance ) {
-			self::$_instance = new self();
+		// Check if instance is already present.
+		if ( ! self::$instance ) {
+			// Create the self instance.
+			self::$instance = new self();
 		}
-		return self::$_instance;
+
+		// Return the instance.
+		return self::$instance;
 	}
 
 	/**
@@ -29,7 +41,8 @@ class Admin {
 	 * @return void
 	 */
 	public function setup(): void {
-		add_action( 'admin_menu', array( $this, 'admin_menu_item' ) );
+		// Setup hooks.
+		add_action( 'admin_menu', [ $this, 'admin_menu_item' ] );
 	}
 
 	/**
@@ -41,6 +54,7 @@ class Admin {
 		// Get the available services.
 		$available_services = apply_filters( 'wp_messaging_services', [] );
 
+		// Loop through all available services and create a menu item for each.
 		foreach ( $available_services as $available_service ) {
 			// Skip if any of the required fields are not provided.
 			if ( empty( $available_service['name'] ) || empty( $available_service['menu_slug'] ) || empty( 'menu_renderer' ) ) {
@@ -57,5 +71,4 @@ class Admin {
 			);
 		}
 	}
-
 }

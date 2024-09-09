@@ -6,7 +6,10 @@
     "start": "npm ci & composer install",
     "start-env": "wp-env start",
     "stop-env": "wp-env stop",
-    "destroy-env": "wp-env destroy"
+    "destroy-env": "wp-env destroy",
+    "lint": "npm run lint:php",
+    "lint:php": "composer lint",
+    "static-analysis:php": "composer static-analysis"
   },
   "repository": {
     "type": "git",

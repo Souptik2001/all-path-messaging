@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards">
+	<rule ref="Travelopia-WordPress">
+		<exclude name="PSR1.Files.SideEffects.FoundWithSymbols" />
+	</rule>
+
+	<file>./inc</file>
+	<file>./wp-messaging.php</file>
+	<file>./.tests</file>
+
+	<!--@see https://github.com/WordPress/WordPress-Coding-Standards/issues/2035#issuecomment-1325532520-->
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+</ruleset>

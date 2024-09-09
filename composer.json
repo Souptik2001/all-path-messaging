@@ -5,7 +5,14 @@
         "utopia-php/messaging": "^0.10.0"
     },
     "require-dev": {
-        "roots/wordpress": "6.5.3"
+        "roots/wordpress": "6.6.1",
+        "squizlabs/php_codesniffer": "*",
+        "travelopia/wordpress-coding-standards": "*",
+        "phpstan/phpstan": "^1.10.50"
+    },
+    "scripts": {
+        "static-analysis": "phpstan analyse -c phpstan.neon --memory-limit=512M",
+        "lint": "phpcs"
     },
     "autoload": {
         "psr-4": {
@@ -20,7 +27,8 @@
     ],
     "config": {
         "allow-plugins": {
-            "roots/wordpress-core-installer": true
+            "roots/wordpress-core-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
