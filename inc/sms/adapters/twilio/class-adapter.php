@@ -26,7 +26,7 @@ class Adapter {
 		$settings = $this->get_settings();
 
 		// Return early if in-valid settings.
-		if ( empty( $settings['account_sid'] ) || empty( $settings['auth_token'] ) ) {
+		if ( empty( $settings['account_sid'] ) || empty( $settings['auth_token'] ) || empty( $settings['from'] ) ) {
 			return null;
 		}
 

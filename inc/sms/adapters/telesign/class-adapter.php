@@ -1,0 +1,73 @@
+<?php
+/**
+ * Telesign adapter: Adapter class.
+ *
+ * @package wp-messaging
+ */
+
+namespace Souptik\WPMessaging\SMS\Adapters\Telesign;
+
+use Utopia\Messaging\Adapter\SMS;
+use Utopia\Messaging\Adapter\SMS\Telesign;
+
+use const Souptik\WPMessaging\SMS\SLUG as SMS_SLUG;
+
+/**
+ * Adapter class.
+ */
+class Adapter {
+	/**
+	 * Get the adapter.
+	 *
+	 * @return ?SMS SMS object or null.
+	 */
+	public function get_adapter(): ?SMS {
+		// Get settings.
+		$settings = $this->get_settings();
+
+		// Return early if in-valid settings.
+		if ( empty( $settings['customer_id'] ) || empty( $settings['api_key'] ) ) {
+			return null;
+		}
+
+		// Return the adapter.
+		return new Telesign( $settings['customer_id'], $settings['api_key'] );
+	}
+
+	/**
+	 * Get adapter settings.
+	 *
+	 * @return array{
+	 *     customer_id: string,
+	 *     api_key: string,
+	 * }
+	 */
+	public function get_settings(): array {
+		// Return the adapter settings.
+		return [
+			'customer_id' => get_option( SMS_SLUG . '_' . SLUG . '_customer_id', '' ),
+			'api_key'     => get_option( SMS_SLUG . '_' . SLUG . '_api_key', '' ),
+		];
+	}
+
+	/**
+	 * Get settings fields.
+	 *
+	 * @return array<string, string>
+	 */
+	public static function get_settings_fields(): array {
+		// Return the settings fields.
+		return [
+			SMS_SLUG . '_' . SLUG . '_customer_id' => [
+				'label'             => __( 'Customer ID', 'wp-messaging' ),
+				'type'              => 'password',
+				'sanitize_callback' => 'sanitize_text_field',
+			],
+			SMS_SLUG . '_' . SLUG . '_api_key'     => [
+				'label'             => __( 'API Key', 'wp-messaging' ),
+				'type'              => 'password',
+				'sanitize_callback' => 'sanitize_text_field',
+			],
+		];
+	}
+}

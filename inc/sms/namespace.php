@@ -14,6 +14,7 @@ const SLUG = 'wp_messaging_sms';
 
 // Load different sms adapters.
 require_once SD_WP_MESSAGING_PATH . '/inc/sms/adapters/twilio/namespace.php';
+require_once SD_WP_MESSAGING_PATH . '/inc/sms/adapters/telesign/namespace.php';
 
 // Bootstrap the module!
 spl_autoload_register( __NAMESPACE__ . '\\autoload' );
@@ -145,6 +146,11 @@ function send( array $to = [], string $message = '', string $adapter = '' ): arr
 
 	// Get the adapter.
 	$adapter_object = $adapters[ $adapter ]['adapter']->get_adapter();
+
+	// Return early if adapter not configured properly.
+	if ( null === $adapter_object ) {
+		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'wp-messaging' ) );
+	}
 
 	// Send the message.
 	return $adapter_object->send( $message );
