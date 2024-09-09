@@ -24,11 +24,11 @@
 /**
  * SMS: Telesign Messaging.
  */
-add_action( 'init', function () {
-	$test = \Souptik\WPMessaging\SMS\send( [ '+918334012176' ], 'Yay its working!', 'telesign' );
-	echo '<h4>SMS: Telesign Messaging -- Triggered from `test-mu-plugin`</h4>';
-	echo '<pre>';
-	print_r( $test );
-	echo '</pre>';
-	exit();
-} );
+// add_action( 'init', function () {
+// 	$test = \Souptik\WPMessaging\SMS\send( [ '+918334012176' ], 'Yay its working!', 'telesign' );
+// 	echo '<h4>SMS: Telesign Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<pre>';
+// 	print_r( $test );
+// 	echo '</pre>';
+// 	exit();
+// } );
