@@ -10,6 +10,7 @@ namespace Souptik\WPMessaging\SMS;
 // Get all the adapters.
 $adapters = apply_filters( SLUG . '_adapters', [] );
 
+// Return early if not adapters found.
 if ( ! is_array( $adapters ) ) {
 	return;
 }

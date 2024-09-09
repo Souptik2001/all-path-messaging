@@ -31,7 +31,7 @@ class Adapter {
 		}
 
 		// Return the adapter.
-		return new Twilio( $settings['account_sid'], $settings['auth_token'] );
+		return new Twilio( $settings['account_sid'], $settings['auth_token'], $settings['from'] );
 	}
 
 	/**
@@ -40,6 +40,7 @@ class Adapter {
 	 * @return array{
 	 *     account_sid: string,
 	 *     auth_token: string,
+	 *     from: string,
 	 * }
 	 */
 	public function get_settings(): array {
@@ -47,6 +48,7 @@ class Adapter {
 		return [
 			'account_sid' => get_option( SMS_SLUG . '_' . SLUG . '_account_sid', '' ),
 			'auth_token'  => get_option( SMS_SLUG . '_' . SLUG . '_auth_token', '' ),
+			'from'        => get_option( SMS_SLUG . '_' . SLUG . '_from', '' ),
 		];
 	}
 
@@ -66,6 +68,11 @@ class Adapter {
 			SMS_SLUG . '_' . SLUG . '_auth_token'  => [
 				'label'             => __( 'Auth Token', 'wp-messaging' ),
 				'type'              => 'password',
+				'sanitize_callback' => 'sanitize_text_field',
+			],
+			SMS_SLUG . '_' . SLUG . '_from'        => [
+				'label'             => __( 'From phone number', 'wp-messaging' ),
+				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 		];

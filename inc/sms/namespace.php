@@ -110,9 +110,17 @@ function get_adapters(): array {
  * @param string   $message Message to send.
  * @param string   $adapter Adapter to use.
  *
- * @return bool|WP_Error
+ * @return array{
+ *     deliveredTo: int,
+ *     type: string,
+ *     results: array<array<string, mixed>>
+ * }|array<string, array{
+ *     deliveredTo: int,
+ *     type: string,
+ *     results: array<array<string, mixed>>
+ * }>|WP_Error
  */
-function send( array $to = [], string $message = '', string $adapter = '' ): bool|WP_Error {
+function send( array $to = [], string $message = '', string $adapter = '' ): array|WP_Error {
 	// Initialize the message.
 	$message = new SMS(
 		to: $to,
@@ -139,5 +147,5 @@ function send( array $to = [], string $message = '', string $adapter = '' ): boo
 	$adapter_object = $adapters[ $adapter ]['adapter']->get_adapter();
 
 	// Send the message.
-	$adapter_object->send( $message );
+	return $adapter_object->send( $message );
 }
