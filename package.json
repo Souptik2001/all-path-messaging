@@ -9,7 +9,8 @@
     "destroy-env": "wp-env destroy",
     "lint": "npm run lint:php",
     "lint:php": "composer lint",
-    "static-analysis:php": "composer static-analysis"
+    "static-analysis:php": "composer static-analysis",
+    "lint-test": "npm run lint && npm run static-analysis:php"
   },
   "repository": {
     "type": "git",

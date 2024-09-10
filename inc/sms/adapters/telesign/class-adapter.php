@@ -46,15 +46,19 @@ class Adapter extends SMS_Adapter {
 	public function get_settings(): array {
 		// Return the adapter settings.
 		return [
-			'customer_id' => get_option( SMS_SLUG . '_' . SLUG . '_customer_id', '' ),
-			'api_key'     => get_option( SMS_SLUG . '_' . SLUG . '_api_key', '' ),
+			'customer_id' => strval( get_option( SMS_SLUG . '_' . SLUG . '_customer_id', '' ) ),
+			'api_key'     => strval( get_option( SMS_SLUG . '_' . SLUG . '_api_key', '' ) ),
 		];
 	}
 
 	/**
 	 * Get settings fields.
 	 *
-	 * @return array<string, string>
+	 * @return array<string, array{
+	 *     label: string,
+	 *     type: string,
+	 *     sanitize_callback: string,
+	 * }>
 	 */
 	public static function get_settings_fields(): array {
 		// Return the settings fields.

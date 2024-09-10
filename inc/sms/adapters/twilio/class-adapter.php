@@ -47,16 +47,20 @@ class Adapter extends SMS_Adapter {
 	public function get_settings(): array {
 		// Return the adapter settings.
 		return [
-			'account_sid' => get_option( SMS_SLUG . '_' . SLUG . '_account_sid', '' ),
-			'auth_token'  => get_option( SMS_SLUG . '_' . SLUG . '_auth_token', '' ),
-			'from'        => get_option( SMS_SLUG . '_' . SLUG . '_from', '' ),
+			'account_sid' => strval( get_option( SMS_SLUG . '_' . SLUG . '_account_sid', '' ) ),
+			'auth_token'  => strval( get_option( SMS_SLUG . '_' . SLUG . '_auth_token', '' ) ),
+			'from'        => strval( get_option( SMS_SLUG . '_' . SLUG . '_from', '' ) ),
 		];
 	}
 
 	/**
 	 * Get settings fields.
 	 *
-	 * @return array<string, string>
+	 * @return array<string, array{
+	 *     label: string,
+	 *     type: string,
+	 *     sanitize_callback: string,
+	 * }>
 	 */
 	public static function get_settings_fields(): array {
 		// Return the settings fields.

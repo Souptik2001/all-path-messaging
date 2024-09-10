@@ -23,17 +23,18 @@ abstract class SMS_Adapter {
 	/**
 	 * Get adapter settings.
 	 *
-	 * @return array{
-	 *     customer_id: string,
-	 *     api_key: string,
-	 * }
+	 * @return array<string, string>
 	 */
 	abstract public function get_settings(): array;
 
 	/**
 	 * Get settings fields.
 	 *
-	 * @return array<string, string>
+	 * @return array<string, array{
+	 *     label: string,
+	 *     type: string,
+	 *     sanitize_callback: string,
+	 * }>
 	 */
 	abstract public static function get_settings_fields(): array;
 }
