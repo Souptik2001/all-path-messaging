@@ -19,6 +19,12 @@ namespace Souptik\WPMessaging\SMS;
 		<form method="post" action="">
 			<table class="form-table">
 				<tbody>
+					<tr>
+						<th>
+							<h3><?php esc_html_e( 'Adapter Settings', 'wp-messaging' ); ?></h3>
+						</th>
+					</tr>
+
 					<?php Admin::get_instance()->adapters_settings_template(); ?>
 				</tbody>
 			</table>

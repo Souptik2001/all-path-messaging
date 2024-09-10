@@ -158,11 +158,11 @@ function get_adapters(): array {
 /**
  * Send the message.
  *
- * @param string   $from_name  From name.
- * @param string   $from_email From email.
  * @param string[] $to         Array of emails.
  * @param string   $subject    Message to send.
  * @param string   $body       Body of the message.
+ * @param string   $from_name  From name.
+ * @param string   $from_email From email.
  * @param string   $adapter    Adapter to use.
  *
  * @return array{
@@ -175,30 +175,33 @@ function get_adapters(): array {
  *     results: array<array<string, mixed>>
  * }>|WP_Error
  */
-function send( string $from_name = '', string $from_email = '', array $to = [], string $subject = '', string $body = '', string $adapter = '' ): array|WP_Error {
-	// Initialize the message.
-	$message = new Email(
-		to: $to,
-		subject: $subject,
-		content: $body,
-		fromName: $from_name,
-		fromEmail: $from_email,
-	);
-
+function send( array $to = [], string $subject = '', string $body = '', string $from_name = '', string $from_email = '', string $adapter = '' ): array|WP_Error {
 	// Get all adapters.
 	$adapters = get_adapters();
 
-	// Get the active adapter - Should this be a filter?
-	$active_adapter = strval( get_option( SLUG . '_active_adapter', '' ) );
-
 	// Override the settings adapter by the parameter's adapter.
 	if ( empty( $adapter ) ) {
-		$adapter = $active_adapter;
+		$adapter = strval( get_option( SLUG . '_active_adapter', '' ) );
+	}
+
+	// Get from name.
+	if ( empty( $from_name ) ) {
+		$from_name = strval( get_option( SLUG . '_from_name', '' ) );
+	}
+
+	// Get from email.
+	if ( empty( $from_email ) ) {
+		$from_email = strval( get_option( SLUG . '_from_email', '' ) );
 	}
 
 	// Return early if adapter not found.
 	if ( empty( $adapters[ $adapter ] ) ) {
 		return new WP_Error( 'adapter_not_found', __( 'Adapter not found.', 'wp-messaging' ) );
+	}
+
+	// Check for email common settings.
+	if ( empty( $from_name ) || empty( $from_email ) ) {
+		return new WP_Error( 'email_common_settings_not_configured', __( 'Email common settings not configured properly.', 'wp-messaging' ) );
 	}
 
 	// Get the adapter.
@@ -208,6 +211,15 @@ function send( string $from_name = '', string $from_email = '', array $to = [], 
 	if ( null === $adapter_object ) {
 		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'wp-messaging' ) );
 	}
+
+	// Initialize the message.
+	$message = new Email(
+		to: $to,
+		subject: $subject,
+		content: $body,
+		fromName: $from_name,
+		fromEmail: $from_email,
+	);
 
 	// Send the message.
 	return $adapter_object->send( $message );

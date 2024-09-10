@@ -174,12 +174,6 @@ function get_adapters(): array {
  * }>|WP_Error
  */
 function send( array $to = [], string $message = '', string $adapter = '' ): array|WP_Error {
-	// Initialize the message.
-	$message = new SMS(
-		to: $to,
-		content: $message
-	);
-
 	// Get all adapters.
 	$adapters = get_adapters();
 
@@ -203,6 +197,12 @@ function send( array $to = [], string $message = '', string $adapter = '' ): arr
 	if ( null === $adapter_object ) {
 		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'wp-messaging' ) );
 	}
+
+	// Initialize the message.
+	$message = new SMS(
+		to: $to,
+		content: $message
+	);
 
 	// Send the message.
 	return $adapter_object->send( $message );

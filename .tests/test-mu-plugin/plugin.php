@@ -46,6 +46,22 @@
 // } );
 
 /**
+ * Email: Default adapter Messaging.
+ */
+// add_action( 'init', function () {
+// 	$test = \Souptik\WPMessaging\Email\send(
+// 		[ 'dev2@souptik.dev' ],
+// 		'Yay its working!',
+// 		'This is some long mail body.',
+// 	);
+// 	echo '<h4>Email: Mailgun Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<pre>';
+// 	print_r( $test );
+// 	echo '</pre>';
+// 	exit();
+// } );
+
+/**
  * Email: Mailgun Messaging.
  */
 // add_action( 'init', function () {

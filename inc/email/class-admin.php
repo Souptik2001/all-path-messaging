@@ -47,7 +47,11 @@ class Admin {
 			&& wp_verify_nonce( sanitize_key( $_POST[ SLUG . '_nonce' ] ), SLUG . '_options' )
 		) {
 			// Set the active adapter.
-			update_option( SLUG . '_active_adapter', sanitize_text_field( $_POST[ SLUG . '_active_adapter' ] ) );
+			update_option( SLUG . '_active_adapter', sanitize_text_field( $_POST[ SLUG . '_active_adapter' ] ?? '' ) );
+
+			// Set common settings.
+			update_option( SLUG . '_from_name', sanitize_text_field( $_POST[ SLUG . '_from_name' ] ?? '' ) );
+			update_option( SLUG . '_from_email', sanitize_email( $_POST[ SLUG . '_from_email' ] ?? '' ) );
 
 			// Get all the adapters.
 			$adapters = get_adapters();
