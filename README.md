@@ -1,5 +1,7 @@
 # WordPress messaging
 
+![GitHub Actions](https://github.com/Souptik2001/wp-messaging/workflows/Coding%20Standards%20and%20Static%20Analysis/badge.svg)
+
 Limitless Communication: All-in-one, super scalable, messaging Solution for WordPress.
 
 Ok hold on! ✋. So, many words in one line.
@@ -11,6 +13,13 @@ Let's understand each one-by-one.
   - No worries! Are you a developer? If yes, just write your own plugin and implement your own adapter and see it nicely hooked-up with "WordPress messaging". Please refer to this section for implementing adapters.
 
 And that's how it provides **Limitless communication**! 🚀
+
+## Open courtesy
+
+A big thank you to these open source projects, which play a crucial role in this project!
+
+- [Utopia Messaging](https://github.com/utopia-php/messaging) - This is literally the backbone of the project. More about it in the Wiki pages. 🔥
+- [Travelopia WordPress PHPCS Coding Standards](https://github.com/Travelopia/wordpress-coding-standards-phpcs) - Super cool PHPCS coding standard rules. ✨
 
 ## Contribute
 
