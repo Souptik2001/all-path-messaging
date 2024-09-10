@@ -13,6 +13,9 @@ use WP_Error;
 
 const SLUG = 'wp_messaging_email';
 
+// Load different email adapters.
+require_once SD_WP_MESSAGING_PATH . '/inc/email/adapters/mailgun/namespace.php';
+
 // Bootstrap the module!
 spl_autoload_register( __NAMESPACE__ . '\\autoload' );
 bootstrap();
@@ -158,7 +161,8 @@ function get_adapters(): array {
  * @param string   $from_name  From name.
  * @param string   $from_email From email.
  * @param string[] $to         Array of emails.
- * @param string   $message    Message to send.
+ * @param string   $subject    Message to send.
+ * @param string   $body       Body of the message.
  * @param string   $adapter    Adapter to use.
  *
  * @return array{
@@ -171,12 +175,12 @@ function get_adapters(): array {
  *     results: array<array<string, mixed>>
  * }>|WP_Error
  */
-function send( string $from_name = '', string $from_email = '', array $to = [], string $message = '', string $adapter = '' ): array|WP_Error {
+function send( string $from_name = '', string $from_email = '', array $to = [], string $subject = '', string $body = '', string $adapter = '' ): array|WP_Error {
 	// Initialize the message.
 	$message = new Email(
 		to: $to,
-		subject: $message,
-		content: $message,
+		subject: $subject,
+		content: $body,
 		fromName: $from_name,
 		fromEmail: $from_email,
 	);
