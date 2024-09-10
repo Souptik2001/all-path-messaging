@@ -159,7 +159,7 @@ function get_adapters(): array {
 /**
  * Send the message.
  *
- * @param string[] $to    Array of mobile numbers.
+ * @param string[] $to      Array of mobile numbers.
  * @param string   $message Message to send.
  * @param string   $adapter Adapter to use.
  *
