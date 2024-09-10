@@ -10,6 +10,18 @@
  */
 
 /**
+ * SMS: Default adapter Messaging.
+ */
+// add_action( 'init', function () {
+// 	$test = \Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
+// 	echo '<h4>SMS: Default Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<pre>';
+// 	print_r( $test );
+// 	echo '</pre>';
+// 	exit();
+// } );
+
+/**
  * SMS: Twilio Messaging.
  */
 // add_action( 'init', function () {

@@ -46,6 +46,9 @@ class Admin {
 			isset( $_POST[ SLUG . '_nonce' ] )
 			&& wp_verify_nonce( sanitize_key( $_POST[ SLUG . '_nonce' ] ), SLUG . '_options' )
 		) {
+			// Set the active adapter.
+			update_option( SLUG . '_active_adapter', sanitize_text_field( $_POST[ SLUG . '_active_adapter' ] ) );
+
 			// Get all the adapters.
 			$adapters = get_adapters();
 

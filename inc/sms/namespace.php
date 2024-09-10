@@ -184,7 +184,7 @@ function send( array $to = [], string $message = '', string $adapter = '' ): arr
 	$adapters = get_adapters();
 
 	// Get the active adapter - Should this be a filter?
-	$active_adapter = get_option( SLUG . '_adapter', '' );
+	$active_adapter = strval( get_option( SLUG . '_active_adapter', '' ) );
 
 	// Override the settings adapter by the parameter's adapter.
 	if ( empty( $adapter ) ) {

@@ -21,6 +21,20 @@ foreach ( $adapters as $key => $adapter ) {
 		<tr>
 			<th><?php echo esc_html( $adapter['name'] ); ?></th>
 		</tr>
+		<tr>
+			<td>
+				<input
+					type="radio"
+					id="<?php echo esc_attr( $key ); ?>"
+					name="<?php echo esc_attr( SLUG . '_active_adapter' ); ?>"
+					value="<?php echo esc_attr( $key ); ?>"
+					<?php checked( get_option( SLUG . '_active_adapter', '' ), $key ); ?>
+				>
+				<label for="<?php echo esc_attr( $key ); ?>">
+					<?php esc_html_e( 'Set as default adapter', 'wp-messaging' ); ?>
+				</label>
+			</td>
+		</tr>
 		<?php
 		// Check if options are present.
 		if ( ! empty( $adapter['options'] ) ) {
