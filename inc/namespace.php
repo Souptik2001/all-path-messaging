@@ -57,6 +57,7 @@ function autoload( string $class_name = '' ): void {
 function bootstrap(): void {
 	// Load different messaging service classes.
 	require_once SD_WP_MESSAGING_PATH . '/inc/sms/namespace.php';
+	require_once SD_WP_MESSAGING_PATH . '/inc/email/namespace.php';
 
 	// Admin stuff.
 	add_action(
