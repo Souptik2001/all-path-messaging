@@ -7,6 +7,7 @@
 
 namespace Souptik\WPMessaging\SMS\Adapters\Twilio;
 
+use Souptik\WPMessaging\SMS\Adapters\SMS_Adapter;
 use Utopia\Messaging\Adapter\SMS;
 use Utopia\Messaging\Adapter\SMS\Twilio;
 
@@ -15,7 +16,7 @@ use const Souptik\WPMessaging\SMS\SLUG as SMS_SLUG;
 /**
  * Adapter class.
  */
-class Adapter {
+class Adapter extends SMS_Adapter {
 	/**
 	 * Get the adapter.
 	 *

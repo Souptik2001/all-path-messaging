@@ -13,7 +13,7 @@
  * SMS: Twilio Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+// 	$test = \Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
 // 	echo '<h4>SMS: Twilio Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );

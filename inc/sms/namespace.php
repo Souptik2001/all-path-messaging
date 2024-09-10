@@ -7,6 +7,7 @@
 
 namespace Souptik\WPMessaging\SMS;
 
+use Souptik\WPMessaging\SMS\Adapters\SMS_Adapter;
 use Utopia\Messaging\Messages\SMS;
 use WP_Error;
 
@@ -91,17 +92,68 @@ function bootstrap(): void {
  *          $adapters[ 'your_adapter' ] = [
  *              'name'    => __( 'Your Adapter', 'wp-messaging' ),
  *              'adapter' => new Your_Adapter_Class(),
+ *              'options' => Your_Adapter_Class::get_settings_fields(),
  *          ];
  *
  *          return $adapters;
  *     }
  * );
  *
- * @return array<string, mixed[]>
+ * @return array<string, array{
+ *     name: string,
+ *     adapter: SMS_Adapter,
+ *     options: array<string, array{
+ *         label: string,
+ *         type: string,
+ *         sanitize_callback: string,
+ *     }>
+ * }>
  */
 function get_adapters(): array {
+	// Get all adapters.
+	$adapters = (array) apply_filters( SLUG . '_adapters', [] );
+
+	// Filtered adapters.
+	$filtered_adapters = [];
+
+	// Loop over the adapters.
+	foreach ( $adapters as $adapter => $data ) {
+		// Return early if invalid adapter.
+		if ( ! is_array( $data ) || empty( $data['name'] ) || empty( $data['adapter'] ) || ! $data['adapter'] instanceof SMS_Adapter ) {
+			continue;
+		}
+
+		// Build the adapter options.
+		$adapter_options = [];
+
+		// Check if options are present.
+		if ( ! empty( $data['options'] ) && is_array( $data['options'] ) ) {
+			// Insert the options.
+			foreach ( $data['options'] as $option => $option_data ) {
+				// Skip if any of the data is missing.
+				if ( empty( strval( $option ) ) || empty( $option_data['label'] ) || empty( $option_data['type'] ) || empty( $option_data['sanitize_callback'] ) ) {
+					continue;
+				}
+
+				// Add the option.
+				$adapter_options[ strval( $option ) ] = [
+					'label'             => strval( $option_data['label'] ),
+					'type'              => strval( $option_data['type'] ),
+					'sanitize_callback' => strval( $option_data['sanitize_callback'] ),
+				];
+			}
+		}
+
+		// Add the adapter.
+		$filtered_adapters[ strval( $adapter ) ] = [
+			'name'    => $data['name'],
+			'adapter' => $data['adapter'],
+			'options' => $adapter_options,
+		];
+	}
+
 	// Return the adapters.
-	return apply_filters( SLUG . '_adapters', [] );
+	return $filtered_adapters;
 }
 
 /**
@@ -140,7 +192,7 @@ function send( array $to = [], string $message = '', string $adapter = '' ): arr
 	}
 
 	// Return early if adapter not found.
-	if ( empty( $adapters[ $adapter ] ) || empty( $adapters[ $adapter ]['adapter'] ) ) {
+	if ( empty( $adapters[ $adapter ] ) ) {
 		return new WP_Error( 'adapter_not_found', __( 'Adapter not found.', 'wp-messaging' ) );
 	}
 

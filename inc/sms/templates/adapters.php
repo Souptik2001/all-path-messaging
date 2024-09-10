@@ -8,7 +8,7 @@
 namespace Souptik\WPMessaging\SMS;
 
 // Get all the adapters.
-$adapters = apply_filters( SLUG . '_adapters', [] );
+$adapters = get_adapters();
 
 // Return early if not adapters found.
 if ( ! is_array( $adapters ) ) {
@@ -19,11 +19,11 @@ if ( ! is_array( $adapters ) ) {
 foreach ( $adapters as $key => $adapter ) {
 	?>
 		<tr>
-			<th><?php echo esc_html( $adapter['name'] ?? 'Adapter - ' . $key ); ?></th>
+			<th><?php echo esc_html( $adapter['name'] ); ?></th>
 		</tr>
 		<?php
 		// Check if options are present.
-		if ( ! empty( $adapter['options'] ) && is_array( $adapter['options'] ) ) {
+		if ( ! empty( $adapter['options'] ) ) {
 			// Loop over all the settings.
 			foreach ( $adapter['options'] as $option_key => $option ) {
 				?>

@@ -15,7 +15,7 @@ class Admin {
 	/**
 	 * Current instance.
 	 *
-	 * @var self
+	 * @var ?self
 	 */
 	private static $instance = null;
 
@@ -47,12 +47,12 @@ class Admin {
 			&& wp_verify_nonce( sanitize_key( $_POST[ SLUG . '_nonce' ] ), SLUG . '_options' )
 		) {
 			// Get all the adapters.
-			$adapters = apply_filters( SLUG . '_adapters', [] );
+			$adapters = get_adapters();
 
 			// Loop over all the adapters.
 			foreach ( $adapters as $adapter ) {
 				// Check if options are present.
-				if ( ! empty( $adapter['options'] ) && is_array( $adapter['options'] ) ) {
+				if ( ! empty( $adapter['options'] ) ) {
 					// Loop over all the settings.
 					foreach ( $adapter['options'] as $option_key => $option ) {
 						// Update the option.
