@@ -9,6 +9,7 @@ namespace Souptik\WPMessaging\Email;
 
 use Souptik\WPMessaging\Email\Adapters\Email_Adapter;
 use Utopia\Messaging\Messages\Email;
+use Utopia\Messaging\Messages\Email\Attachment;
 use WP_Error;
 
 const SLUG = 'wp_messaging_email';
@@ -163,6 +164,7 @@ function get_adapters(): array {
  * @param string   $body       Body of the message.
  * @param string   $from_name  From name.
  * @param string   $from_email From email.
+ * @param mixed[]  $headers    Headers to send.
  * @param string   $adapter    Adapter to use.
  *
  * @return array{
@@ -175,7 +177,7 @@ function get_adapters(): array {
  *     results: array<array<string, mixed>>
  * }>|WP_Error
  */
-function send( array $to = [], string $subject = '', string $body = '', string $from_name = '', string $from_email = '', string $adapter = '' ): array|WP_Error {
+function send( array $to = [], string $subject = '', string $body = '', string $from_name = '', string $from_email = '', array $headers = [], string $adapter = '' ): array|WP_Error {
 	// Get all adapters.
 	$adapters = get_adapters();
 
@@ -212,6 +214,33 @@ function send( array $to = [], string $subject = '', string $body = '', string $
 		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'wp-messaging' ) );
 	}
 
+	// Get the headers.
+	$headers = [
+		'reply_to_name'  => strval( $headers['reply_to_name'] ?? '' ),
+		'reply_to_email' => strval( $headers['reply_to_email'] ?? '' ),
+		'cc'             => array_filter( (array) ( $headers['cc'] ?? [] ), 'is_array' ),
+		'bcc'            => array_filter( (array) ( $headers['bcc'] ?? [] ), 'is_array' ),
+		'attachments'    => (array) ( $headers['attachments'] ?? [] ),
+	];
+
+	// Attachments.
+	$attachments = [];
+
+	// Build the attachments.
+	foreach ( $headers['attachments'] as $key => $attachment ) {
+		// Skip if empty attachment.
+		if ( empty( $attachment ) || ! is_string( $attachment ) ) {
+			continue;
+		}
+
+		// Build the attachment.
+		$attachments[] = new Attachment(
+			name: is_string( $key ) ? $key : $attachment,
+			path: $attachment,
+			type: '',
+		);
+	}
+
 	// Initialize the message.
 	$message = new Email(
 		to: $to,
@@ -219,6 +248,12 @@ function send( array $to = [], string $subject = '', string $body = '', string $
 		content: $body,
 		fromName: $from_name,
 		fromEmail: $from_email,
+		replyToName: $headers['reply_to_name'],
+		replyToEmail: $headers['reply_to_email'],
+		cc: $headers['cc'],
+		bcc: $headers['bcc'],
+		attachments: $attachments,
+		html: true,
 	);
 
 	// Send the message.
