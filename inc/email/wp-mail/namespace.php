@@ -1,11 +1,11 @@
 <?php
 /**
- * Email: WP-CLI: Namespace functions.
+ * Email: WP-Mail: Namespace functions.
  *
  * @package wp-messaging
  */
 
-namespace Souptik\WPMessaging\Email\WPCLI;
+namespace Souptik\WPMessaging\Email\WPMail;
 
 use WP_Error;
 

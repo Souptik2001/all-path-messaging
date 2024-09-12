@@ -18,7 +18,7 @@ const SLUG = 'wp_messaging_email';
 require_once SD_WP_MESSAGING_PATH . '/inc/email/adapters/mailgun/namespace.php';
 
 // Sub-module to hijack `wp_mail` function.
-require_once SD_WP_MESSAGING_PATH . '/inc/email/wp-cli/namespace.php';
+require_once SD_WP_MESSAGING_PATH . '/inc/email/wp-mail/namespace.php';
 
 // Bootstrap the module!
 spl_autoload_register( __NAMESPACE__ . '\\autoload' );
