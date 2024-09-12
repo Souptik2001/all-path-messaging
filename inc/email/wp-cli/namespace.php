@@ -11,6 +11,8 @@ use WP_Error;
 
 use function Souptik\WPMessaging\Email\send;
 
+use const Souptik\WPMessaging\Email\SLUG;
+
 // Bootstrap the module!
 bootstrap();
 
@@ -21,7 +23,7 @@ bootstrap();
  */
 function bootstrap(): void {
 	// Hijack wp_mail.
-	add_filter( 'pre_wp_mail', __NAMESPACE__ . '\\hijack_wp_mail', 10, 2 );
+	add_filter( 'pre_wp_mail', __NAMESPACE__ . '\\hijack_wp_mail', 1, 2 );
 }
 
 /**
@@ -34,9 +36,14 @@ function bootstrap(): void {
  * @param ?bool                $success     Whether to preempt sending the email. Default null to continue with normal behavior, boolean to override.
  * @param array<string, mixed> $attributes Email attributes.
  *
- * @return bool
+ * @return ?bool
  */
-function hijack_wp_mail( ?bool $success = null, array $attributes = [] ): bool {
+function hijack_wp_mail( ?bool $success = null, array $attributes = [] ): ?bool {
+	// Check if we need to hijack.
+	if ( true !== boolval( get_option( SLUG . '_hijack_wp_mail', false ) ) ) {
+		return $success;
+	}
+
 	// Return early if invalid attributes.
 	if ( empty( $attributes['to'] ) ) {
 		// Mail fails.

@@ -48,20 +48,20 @@
 /**
  * Email: WP Mail override.
  */
-add_action( 'init', function () {
-	$test = wp_mail(
-		[ 'dev2@souptik.dev' ],
-		'Yay its working!',
-		'This is some long mail body - from <strong>wp_mail</strong>.',
-		[],
-		[]
-	);
-	echo '<h4>Email: Mailgun Messaging -- Triggered from `test-mu-plugin`</h4>';
-	echo '<pre>';
-	echo $test ? 'Success!' : 'Failed :(';
-	echo '</pre>';
-	exit();
-} );
+// add_action( 'init', function () {
+// 	$test = wp_mail(
+// 		[ 'dev2@souptik.dev' ],
+// 		'Yay its working!',
+// 		'This is some long mail body - from <strong>wp_mail</strong>.',
+// 		[],
+// 		[]
+// 	);
+// 	echo '<h4>Email: Mailgun Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<pre>';
+// 	echo $test ? 'Success!' : 'Failed :(';
+// 	echo '</pre>';
+// 	exit();
+// } );
 
 /**
  * Email: Default adapter Messaging.

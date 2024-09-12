@@ -52,6 +52,22 @@ namespace Souptik\WPMessaging\Email;
 							>
 						</td>
 					</tr>
+					<tr>
+					<th scope="row">
+							<label for="override_wp_mail">
+								<?php esc_html_e( 'Override wp_mail functionality', 'wp-messaging' ); ?>
+							</label>
+						</th>
+						<td>
+							<input
+								type="checkbox"
+								id="override_wp_mail"
+								name="<?php echo esc_attr( SLUG . '_hijack_wp_mail' ); ?>"
+								value="yes"
+								<?php checked( boolval( get_option( SLUG . '_hijack_wp_mail', false ) ), true ); ?>
+							>
+						</td>
+					</tr>
 
 					<tr>
 						<th>

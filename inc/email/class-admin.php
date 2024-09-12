@@ -52,6 +52,7 @@ class Admin {
 			// Set common settings.
 			update_option( SLUG . '_from_name', sanitize_text_field( $_POST[ SLUG . '_from_name' ] ?? '' ) );
 			update_option( SLUG . '_from_email', sanitize_email( $_POST[ SLUG . '_from_email' ] ?? '' ) );
+			update_option( SLUG . '_hijack_wp_mail', 'yes' === sanitize_text_field( $_POST[ SLUG . '_hijack_wp_mail' ] ?? 'no' ) );
 
 			// Get all the adapters.
 			$adapters = get_adapters();
