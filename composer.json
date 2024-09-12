@@ -5,7 +5,7 @@
         "utopia-php/messaging": "^0.10.0"
     },
     "require-dev": {
-        "roots/wordpress": "6.6.1",
+        "roots/wordpress": "6.6.2",
         "squizlabs/php_codesniffer": "*",
         "travelopia/wordpress-coding-standards": "*",
         "phpstan/phpstan": "^1.10.50"
