@@ -56,7 +56,7 @@
 // 		[],
 // 		[]
 // 	);
-// 	echo '<h4>Email: Mailgun Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<h4>Email: WP Mail Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	echo $test ? 'Success!' : 'Failed :(';
 // 	echo '</pre>';
