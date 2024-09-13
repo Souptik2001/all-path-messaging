@@ -2,6 +2,8 @@
 /**
  * Brevo adapter: Main Sender.
  *
+ * Disclaimer: You will see at some places we are not directly following WordPress patterns, that's because we are following Utopia's pattern and not deviating from it.
+ *
  * @package wp-messaging
  */
 
