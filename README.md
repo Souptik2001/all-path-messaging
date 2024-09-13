@@ -33,7 +33,7 @@ The main two ideas of the the plugin are -
 #### For users -
 
 - WordPress' default `wp_mail` doesn't deliver your mail reliably? Select any of the available adapters to override `wp_mail` to deliver mails reliably.
-- Already using some email marketing plugin? But not finding your desired provider? And tired of requesting the author to introduce the provider? 😣 - No worries! 🎉 - Have some developer friend, or have some coding knowledge? [Learn how easy it is to add your own provider with a simple boilerplate code](https://github.com/Souptik2001/wp-messaging?tab=readme-ov-file#creating-your-own-adapter-%EF%B8%8F)!
+- Already using some email marketing plugin? But not finding your desired provider? And tired of requesting the author to introduce the provider? 😣 - No worries! 🎉 - Have some developer friend, or some coding knowledge? [Learn how easy it is to add your own provider with a simple boilerplate code](https://github.com/Souptik2001/wp-messaging?tab=readme-ov-file#creating-your-own-adapter-%EF%B8%8F)!
   - TLDR; Keep using your favorite email marketing plugin, while routing the emails through **WP Messaging** plugin! 🚀
 
 ### Services -

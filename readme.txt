@@ -37,41 +37,88 @@ And that's how it provides **Limitless communication**! 🚀
 
 ### Examples
 
-`
-<?php
-/**
- * SMS: Twilio Messaging.
- *
- * Remove the last parameter to use the default selected adapter.
- */
-$response = \Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+#### Email 📧📨
 
-/**
- * Email: Mailgun Messaging - with headers.
- *
- * Remove the last parameter to use the default selected adapter.
- */
-$response = \Souptik\WPMessaging\Email\send(
-	[ 'to@test.com' ],
-	'Yay its working!',
-	'This is some long mail body, with <strong>HTML</strong>!',
-	'From Name',
-	'from@test.com',
-	[
-		'cc' => [
-			[
-				'name'  => 'CC Name',
-				'email' => 'cc@test.com',
-			],
-		],
-		'attachments' => [
-			'/path/to/attachment.pdf',
-			'SameFileDifferentName.pdf' => '/path/to/attachment.pdf',
-		],
-	],
-	'mailgun'
-);
+Send an email through a particular adapter (with headers 😉) -
+
 `
+\Souptik\WPMessaging\Email\send(
+  [ 'dev2@souptik.dev' ],
+  'Yay its working!',
+  'This is some long mail body.',
+  'Souptik',
+  'dev1@souptik.dev',
+  [
+   'cc' => [
+    [
+     'name'  => 'CC Test',
+     'email' => 'cc@souptik.dev',
+    ],
+   ],
+   'attachments' => [
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+   ],
+  ],
+  'mailgun'
+ );
+`
+
+Just remove the last parameter! And now it uses the default selected adapter -
+
+`
+\Souptik\WPMessaging\Email\send(
+  [ 'dev2@souptik.dev' ],
+  'Yay its working!',
+  'This is some long mail body.',
+  'Souptik',
+  'dev1@souptik.dev',
+  [
+   'cc' => [
+    [
+     'name'  => 'CC Test',
+     'email' => 'cc@souptik.dev',
+    ],
+   ],
+   'attachments' => [
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+   ],
+  ],
+ );
+`
+
+Checked the override `wp_mail` checkbox? Try a simple `wp_mail`! -
+
+`
+wp_mail(
+  [ 'dev2@souptik.dev' ],
+  'Yay its working!',
+  'This is some long mail body - from <strong>wp_mail</strong>.',
+  [],
+  []
+ );
+`
+
+#### SMS 📲
+
+Send a SMS through a particular adapter -
+
+`
+\Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+`
+
+Just remove the last parameter! And now it uses the default selected adapter -
+
+`
+\Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
+`
+
+### Creating your own adapter 🛠️
+
+Here comes the cool part fellow developers!
+
+Docs coming soon! ⏳
 
 == Installation ==
 
