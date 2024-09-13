@@ -21,6 +21,110 @@ A big thank you to these open source projects, which play a crucial role in this
 - [Utopia Messaging](https://github.com/utopia-php/messaging) - This is literally the backbone of the project. More about it in the Wiki pages. 🔥
 - [Travelopia WordPress PHPCS Coding Standards](https://github.com/Travelopia/wordpress-coding-standards-phpcs) - Super cool PHPCS coding standard rules. ✨
 
+## WIKI
+
+The main two ideas of the the plugin are -
+
+#### For Developers -
+
+- To give a simple easy to use  function to send **Email**, **SMS** or **Push Notifications** through the selected adapter.
+- Don't have your desired adapter? No need to wait for me! Go ahead and add the adapter yourself, by just a simple boilerplate code! [See how easy it is to add your own adapter](https://souptik.dev)!
+
+#### For users -
+
+- WordPress' default `wp_mail` doesn't deliver your mail reliably? Select any of the available adapters to override `wp_mail` to deliver mails reliably.
+- Already using some email marketing plugin? But not finding your desired provider? And tired of requesting the author to introduce the provider? 😣 - No worries! 🎉 - Have some developer friend, or have some coding knowledge? [Learn how easy it is to add your own provider with a simple boilerplate code](https://souptik.dev)!
+  - TLDR; Keep using your favorite email marketing plugin, while routing the emails through **WP Messaging** plugin! 🚀
+
+### Services -
+
+#### Email 📧📨
+
+Send an email through a particular adapter (with headers 😉) -
+
+```php
+\Souptik\WPMessaging\Email\send(
+  [ 'dev2@souptik.dev' ],
+  'Yay its working!',
+  'This is some long mail body.',
+  'Souptik',
+  'dev1@souptik.dev',
+  [
+   'cc' => [
+    [
+     'name'  => 'CC Test',
+     'email' => 'cc@souptik.dev',
+    ],
+   ],
+   'attachments' => [
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+   ],
+  ],
+  'mailgun'
+ );
+```
+
+Just remove the last parameter! And now it uses the default selected adapter -
+
+```php
+\Souptik\WPMessaging\Email\send(
+  [ 'dev2@souptik.dev' ],
+  'Yay its working!',
+  'This is some long mail body.',
+  'Souptik',
+  'dev1@souptik.dev',
+  [
+   'cc' => [
+    [
+     'name'  => 'CC Test',
+     'email' => 'cc@souptik.dev',
+    ],
+   ],
+   'attachments' => [
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+   ],
+  ],
+ );
+```
+
+Checked the override `wp_mail` checkbox? Try a simple `wp_mail`! -
+
+```php
+wp_mail(
+  [ 'dev2@souptik.dev' ],
+  'Yay its working!',
+  'This is some long mail body - from <strong>wp_mail</strong>.',
+  [],
+  []
+ );
+```
+
+#### SMS 📲
+
+Send a SMS through a particular adapter -
+
+```php
+\Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+```
+
+Just remove the last parameter! And now it uses the default selected adapter -
+
+```php
+\Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
+```
+
+### Creating your own adapter 🛠️
+
+Here comes the cool part fellow developers!
+
+Docs coming soon! ⏳
+
+### Special mention about "Utopia Messaging" package 🙏
+
+Thank you message coming soon!
+
 ## Contribute
 
 Feel free to open a issue or pull request if you want to contribute anything to this plugin!
