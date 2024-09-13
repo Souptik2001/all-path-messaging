@@ -129,3 +129,36 @@
 // 	echo '</pre>';
 // 	exit();
 // } );
+
+/**
+ * Email: Brevo Messaging - with headers.
+ */
+// add_action( 'init', function () {
+// 	$test = \Souptik\WPMessaging\Email\send(
+// 		[ 'dev2@souptik.dev' ],
+// 		'Yay its working!',
+// 		'This is some long mail body.',
+// 		'',
+// 		'dev1@souptik.dev',
+// 		[
+// 			'reply_to_name' => 'Reply Test',
+// 			'reply_to_email' => 'dev2@souptik.dev',
+// 			'cc' => [
+// 				[
+// 					'name'  => 'CC Test',
+// 					'email' => 'cc@souptik.dev',
+// 				],
+// 			],
+// 			'attachments' => [
+// 				// For Brevo only few supported file types are allowed, for example PHP is not supported.
+// 		 		'SameFileDifferentName.txt' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+// 			],
+// 		],
+// 		'brevo'
+// 	);
+// 	echo '<h4>Email: Mailgun Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<pre>';
+// 	print_r( $test );
+// 	echo '</pre>';
+// 	exit();
+// } );

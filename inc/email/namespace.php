@@ -16,6 +16,7 @@ const SLUG = 'wp_messaging_email';
 
 // Load different email adapters.
 require_once SD_WP_MESSAGING_PATH . '/inc/email/adapters/mailgun/namespace.php';
+require_once SD_WP_MESSAGING_PATH . '/inc/email/adapters/brevo/namespace.php';
 
 // Sub-module to hijack `wp_mail` function.
 require_once SD_WP_MESSAGING_PATH . '/inc/email/wp-mail/namespace.php';
