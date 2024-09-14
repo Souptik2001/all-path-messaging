@@ -142,6 +142,10 @@ Just remove the last parameter! And now it uses the default selected adapter -
 \Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
 ```
 
+#### Push notification 💬
+
+Coming soon! ⏳
+
 ### Creating your own adapter 🛠️
 
 Here comes the cool part fellow developers!
