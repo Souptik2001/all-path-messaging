@@ -8,7 +8,7 @@ Ok hold on! ✋. So, many words in one line.
 Let's understand each one-by-one.
 
 - **All-in-one:** What do you want? - Email, SMS, push-notification? Get all-in-one.
-  - But can I don't want to use `xyz` provider for SMS, I want to use `pqr`, can I have that? Yes it provides you with lot of pre implemented providers for all email, sms and push-notification.
+  - But I don't want to use `xyz` provider for SMS, I want to use `pqr`, can I have that? Yes it provides you with lot of pre implemented providers for all email, sms and push-notification.
 - **Super Scalable:** But I want to use an email provider named `yxr` you haven't heard the name of. Now what? 🧐
   - No worries! Are you a developer? If yes, just write your own plugin and implement your own adapter and see it nicely hooked-up with "WordPress messaging". Please refer to this section for implementing adapters.
 
