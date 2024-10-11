@@ -2,8 +2,6 @@
 /**
  * Dummy adapter: Main Sender.
  *
- * Disclaimer: You will see at some places we are not directly following WordPress patterns, that's because we are following Utopia's pattern and not deviating from it.
- *
  * This file will not be present if Utopia provides the adapter you are looking for. Just use that!
  *
  * @package wp-messaging
@@ -27,7 +25,7 @@ class Dummy extends EmailAdapter {
 	 *
 	 * @var string
 	 */
-	protected const NAME = 'Dummy'; // phpcs:ignore
+	protected const NAME = 'Dummy'; // phpcs:ignore Travelopia.Whitespace.GroupedConst.AddEmptyLineBeforeConstGroup
 
 	/**
 	 * Constructor.
@@ -59,10 +57,16 @@ class Dummy extends EmailAdapter {
 		return 1000;
 	}
 
-	/** // phpcs:ignore -- We are inheriting the doc here - as it is.
-	 * {@inheritdoc}
-	 */ // phpcs:ignore -- We are inheriting the doc here - as it is.
-	protected function process( EmailMessage $message = null ): array { // phpcs:ignore -- We are inheriting the doc here - as it is.
+	/**
+	 * Core function to send the email.
+	 *
+	 * @param ?EmailMessage $message Email message object.
+	 *
+	 * @throws Exception If the message is invalid.
+	 *
+	 * @return mixed[]
+	 */
+	protected function process( EmailMessage $message = null ): array {
 		// Return early if message is invalid.
 		if ( ! $message instanceof EmailMessage ) {
 			throw new Exception( 'Invalid message' );

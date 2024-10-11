@@ -72,7 +72,7 @@
 // 		'Yay its working!',
 // 		'This is some long mail body.',
 // 	);
-// 	echo '<h4>Email: Mailgun Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<h4>Email: Default Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );
 // 	echo '</pre>';
@@ -156,7 +156,7 @@
 // 		],
 // 		'brevo'
 // 	);
-// 	echo '<h4>Email: Mailgun Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<h4>Email: Brevo Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );
 // 	echo '</pre>';

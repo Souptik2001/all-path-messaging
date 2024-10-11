@@ -2,8 +2,6 @@
 /**
  * Brevo adapter: Main Sender.
  *
- * Disclaimer: You will see at some places we are not directly following WordPress patterns, that's because we are following Utopia's pattern and not deviating from it.
- *
  * @package wp-messaging
  */
 
@@ -25,7 +23,7 @@ class Brevo extends EmailAdapter {
 	 *
 	 * @var string
 	 */
-	protected const NAME = 'Brevo'; // phpcs:ignore
+	protected const NAME = 'Brevo'; // phpcs:ignore Travelopia.Whitespace.GroupedConst.AddEmptyLineBeforeConstGroup
 
 	/**
 	 * Constructor.
@@ -56,14 +54,31 @@ class Brevo extends EmailAdapter {
 		return 1000;
 	}
 
-	/** // phpcs:ignore -- We are inheriting the doc here - as it is.
-	 * {@inheritdoc}
-	 */ // phpcs:ignore -- We are inheriting the doc here - as it is.
-	protected function process( EmailMessage $message = null ): array { // phpcs:ignore -- We are inheriting the doc here - as it is.
+	/**
+	 * Core function to send the email.
+	 *
+	 * @param ?EmailMessage $message Email message object.
+	 *
+	 * @throws Exception If the message is invalid.
+	 *
+	 * @return mixed[]
+	 */
+	protected function process( EmailMessage $message = null ): array {
 		// Return early if message is invalid.
 		if ( ! $message instanceof EmailMessage ) {
 			throw new Exception( 'Invalid message' );
 		}
+
+		// WP Filesystem.
+		global $wp_filesystem;
+
+		// Include WP Filesystem if not present.
+		if ( ! function_exists( 'WP_Filesystem' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+		}
+
+		// Initialize WP Filesystem.
+		WP_Filesystem();
 
 		// Get the to email addresses.
 		$to = array_map(
@@ -160,21 +175,22 @@ class Brevo extends EmailAdapter {
 					continue;
 				}
 
-				// Create a new CURL file.
-				$attachment_file = curl_file_create( // phpcs:ignore WordPress.WP.AlternativeFunctions.curl_curl_file_create
-					$attachment->getPath(),
-					$attachment->getType(),
-					$attachment->getName(),
-				);
+				// Attachment content.
+				$attachment_content = '';
 
-				// Get the attachment contents.
-				$attachment_content = file_get_contents( $attachment->getPath() ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+				// Skip if attachment file not present.
+				if ( false === $wp_filesystem->exists( $attachment->getPath() ) ) {
+					continue;
+				}
+
+				// Get the attachment content.
+				$attachment_content = $wp_filesystem->get_contents( $attachment->getPath() );
 
 				// Insert the attachments.
-				if ( ! empty( $attachment_content ) && ! empty( $attachment_file->getPostFilename() ) ) {
+				if ( ! empty( $attachment_content ) && ! empty( $attachment->getName() ) ) {
 					$attachments[] = [
-						'name'    => $attachment_file->getPostFileName(),
-						'content' => base64_encode( $attachment_content ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+						'name'    => $attachment->getName(),
+						'content' => base64_encode( $attachment_content ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- Brevo API requires base64 encoded content.
 					];
 				}
 			}
