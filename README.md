@@ -14,7 +14,7 @@ Let's understand each one-by-one.
 
 And that's how it provides **Limitless communication**! 🚀
 
-## Open courtesy
+## Open Source courtesy
 
 A big thank you to these open source projects, which play a crucial role in this project!
 
