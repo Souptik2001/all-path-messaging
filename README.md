@@ -21,6 +21,10 @@ A big thank you to these open source projects, which play a crucial role in this
 - [Utopia Messaging](https://github.com/utopia-php/messaging) - This is literally the backbone of the project. More about it [here](https://github.com/Souptik2001/wp-messaging?tab=readme-ov-file#special-mention-about-utopia-messaging-package-). 🔥
 - [Travelopia WordPress PHPCS Coding Standards](https://github.com/Travelopia/wordpress-coding-standards-phpcs) - Super cool PHPCS coding standard rules. ✨
 
+## Quick Links
+
+[Setup ⚙️](https://github.com/Souptik2001/wp-messaging/wiki/Setup-%E2%9A%99%EF%B8%8F) | [Issues](https://github.com/Souptik2001/wp-messaging/issues) | [Services and functions 🧩](https://github.com/Souptik2001/wp-messaging/wiki/Services-and-functions-%F0%9F%A7%A9) | [Create your own Adapter 🛠️](https://github.com/Souptik2001/wp-messaging/wiki/Create-your-own-Adapter-%F0%9F%9B%A0%EF%B8%8F)
+
 ## WIKI
 
 The main two ideas of the the plugin are -
