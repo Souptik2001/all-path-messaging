@@ -38,7 +38,7 @@ jobs:
           key: node-${{ hashFiles( 'package-lock.json' ) }}-${{ hashFiles( '.github/workflows/main.yml' ) }}
 
       - name: Install Composer dependencies
-        if: steps.composer-cache.outputs.cache-hit != 'true' || steps.travelopia-packages-cache.outputs.cache-hit != 'true'
+        if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install
 
       - name: Install NodeJS dependencies
