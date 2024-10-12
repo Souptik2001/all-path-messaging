@@ -5,6 +5,8 @@
  * Version: 1.0.0
  * Author: Souptik Datta
  * Author URI: https://souptik.dev
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: all-in-one-messaging
  *
  * @package all-in-one-messaging
