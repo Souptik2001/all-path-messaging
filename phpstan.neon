@@ -12,5 +12,5 @@ parameters:
 		- wordpress/wp-admin/includes/noop.php
 	ignoreErrors:
 		- '#Parameter \#1 \$value of function strval expects bool\|float\|int\|resource\|string\|null, (.*) given.#'
-		- '#Constant SD_WP_MESSAGING_PATH not found.#'
+		- '#Constant SD_AIO_MESSAGING_PATH not found.#'
 		- '#Parameter \#(.*) \$callback of function (call_user_func|add_management_page) expects callable\(\): mixed, (.*) given.#'

@@ -5,7 +5,7 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging;
+namespace Souptik\AIOMessaging;
 
 // Bootstrap the plugin!
 spl_autoload_register( __NAMESPACE__ . '\\autoload' );
@@ -25,7 +25,7 @@ function autoload( string $class_name = '' ): void {
 	}
 
 	// Format the namespace.
-	$path          = SD_WP_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR;
+	$path          = SD_AIO_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR;
 	$prefix_length = strlen( __NAMESPACE__ );
 	$class_name    = substr( $class_name, $prefix_length + 1 );
 	$class_name    = strtolower( $class_name );
@@ -56,8 +56,8 @@ function autoload( string $class_name = '' ): void {
  */
 function bootstrap(): void {
 	// Load different messaging service classes.
-	require_once SD_WP_MESSAGING_PATH . '/inc/sms/namespace.php';
-	require_once SD_WP_MESSAGING_PATH . '/inc/email/namespace.php';
+	require_once SD_AIO_MESSAGING_PATH . '/inc/sms/namespace.php';
+	require_once SD_AIO_MESSAGING_PATH . '/inc/email/namespace.php';
 
 	// Admin stuff.
 	add_action(

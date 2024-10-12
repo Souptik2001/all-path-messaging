@@ -5,7 +5,7 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\Email\Adapters\Brevo;
+namespace Souptik\AIOMessaging\Email\Adapters\Brevo;
 
 use Exception;
 use Utopia\Messaging\Adapter\Email as EmailAdapter;

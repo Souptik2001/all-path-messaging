@@ -5,7 +5,7 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\Email\Adapters;
+namespace Souptik\AIOMessaging\Email\Adapters;
 
 use Utopia\Messaging\Adapter\Email;
 

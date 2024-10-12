@@ -5,7 +5,7 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\SMS\Adapters;
+namespace Souptik\AIOMessaging\SMS\Adapters;
 
 use Utopia\Messaging\Adapter\SMS;
 

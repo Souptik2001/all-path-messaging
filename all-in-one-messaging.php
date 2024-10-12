@@ -10,14 +10,14 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging;
+namespace Souptik\AIOMessaging;
 
-define( 'SD_WP_MESSAGING_PATH', untrailingslashit( __DIR__ ) );
+define( 'SD_AIO_MESSAGING_PATH', untrailingslashit( __DIR__ ) );
 
 // Load Composer autoloader if available.
-if ( file_exists( SD_WP_MESSAGING_PATH . '/vendor/autoload.php' ) ) {
-	require_once SD_WP_MESSAGING_PATH . '/vendor/autoload.php';
+if ( file_exists( SD_AIO_MESSAGING_PATH . '/vendor/autoload.php' ) ) {
+	require_once SD_AIO_MESSAGING_PATH . '/vendor/autoload.php';
 }
 
 // Load plugin files.
-require_once SD_WP_MESSAGING_PATH . '/inc/namespace.php';
+require_once SD_AIO_MESSAGING_PATH . '/inc/namespace.php';

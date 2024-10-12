@@ -5,9 +5,9 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\Email;
+namespace Souptik\AIOMessaging\Email;
 
-use Souptik\WPMessaging\Email\Adapters\Email_Adapter;
+use Souptik\AIOMessaging\Email\Adapters\Email_Adapter;
 use Utopia\Messaging\Messages\Email;
 use Utopia\Messaging\Messages\Email\Attachment;
 use WP_Error;
@@ -15,11 +15,11 @@ use WP_Error;
 const SLUG = 'wp_messaging_email';
 
 // Load different email adapters.
-require_once SD_WP_MESSAGING_PATH . '/inc/email/adapters/mailgun/namespace.php';
-require_once SD_WP_MESSAGING_PATH . '/inc/email/adapters/brevo/namespace.php';
+require_once SD_AIO_MESSAGING_PATH . '/inc/email/adapters/mailgun/namespace.php';
+require_once SD_AIO_MESSAGING_PATH . '/inc/email/adapters/brevo/namespace.php';
 
 // Sub-module to hijack `wp_mail` function.
-require_once SD_WP_MESSAGING_PATH . '/inc/email/wp-mail/namespace.php';
+require_once SD_AIO_MESSAGING_PATH . '/inc/email/wp-mail/namespace.php';
 
 // Bootstrap the module!
 spl_autoload_register( __NAMESPACE__ . '\\autoload' );
@@ -39,7 +39,7 @@ function autoload( string $class_name = '' ): void {
 	}
 
 	// Format the namespace.
-	$path          = SD_WP_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc/email' . DIRECTORY_SEPARATOR;
+	$path          = SD_AIO_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc/email' . DIRECTORY_SEPARATOR;
 	$prefix_length = strlen( __NAMESPACE__ );
 	$class_name    = substr( $class_name, $prefix_length + 1 );
 	$class_name    = strtolower( $class_name );
@@ -91,7 +91,7 @@ function bootstrap(): void {
  *
  * Add new adapter like this -
  * add_filter(
- *     \Souptik\WPMessaging\Email\SLUG . '_adapters',
+ *     \Souptik\AIOMessaging\Email\SLUG . '_adapters',
  *     function( array $adapters = [] ): array {
  *          $adapters[ 'your_adapter' ] = [
  *              'name'    => __( 'Your Adapter', 'all-in-one-messaging' ),

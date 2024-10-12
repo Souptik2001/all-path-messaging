@@ -5,7 +5,7 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\SMS;
+namespace Souptik\AIOMessaging\SMS;
 
 /**
  * Admin class.
@@ -69,7 +69,7 @@ class Admin {
 		}
 
 		// Load template.
-		load_template( SD_WP_MESSAGING_PATH . '/inc/sms/templates/options.php' );
+		load_template( SD_AIO_MESSAGING_PATH . '/inc/sms/templates/options.php' );
 	}
 
 	/**
@@ -79,6 +79,6 @@ class Admin {
 	 */
 	public function adapters_settings_template(): void {
 		// Load the template.
-		load_template( SD_WP_MESSAGING_PATH . '/inc/sms/templates/adapters.php' );
+		load_template( SD_AIO_MESSAGING_PATH . '/inc/sms/templates/adapters.php' );
 	}
 }

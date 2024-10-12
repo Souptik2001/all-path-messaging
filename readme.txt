@@ -44,7 +44,7 @@ And that's how it provides **Limitless communication**! 🚀
 Send an email through a particular adapter (with headers 😉) -
 
 `
-\Souptik\WPMessaging\Email\send(
+\Souptik\AIOMessaging\Email\send(
   [ 'dev2@souptik.dev' ],
   'Yay its working!',
   'This is some long mail body.',
@@ -69,7 +69,7 @@ Send an email through a particular adapter (with headers 😉) -
 Just remove the last parameter! And now it uses the default selected adapter -
 
 `
-\Souptik\WPMessaging\Email\send(
+\Souptik\AIOMessaging\Email\send(
   [ 'dev2@souptik.dev' ],
   'Yay its working!',
   'This is some long mail body.',
@@ -107,13 +107,13 @@ wp_mail(
 Send a SMS through a particular adapter -
 
 `
-\Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+\Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
 `
 
 Just remove the last parameter! And now it uses the default selected adapter -
 
 `
-\Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
+\Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
 `
 
 ### Creating your own adapter 🛠️

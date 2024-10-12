@@ -5,7 +5,7 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\SMS;
+namespace Souptik\AIOMessaging\SMS;
 
 // Get all the adapters.
 $adapters = get_adapters();

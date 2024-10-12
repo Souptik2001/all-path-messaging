@@ -5,17 +5,17 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\SMS;
+namespace Souptik\AIOMessaging\SMS;
 
-use Souptik\WPMessaging\SMS\Adapters\SMS_Adapter;
+use Souptik\AIOMessaging\SMS\Adapters\SMS_Adapter;
 use Utopia\Messaging\Messages\SMS;
 use WP_Error;
 
 const SLUG = 'wp_messaging_sms';
 
 // Load different sms adapters.
-require_once SD_WP_MESSAGING_PATH . '/inc/sms/adapters/twilio/namespace.php';
-require_once SD_WP_MESSAGING_PATH . '/inc/sms/adapters/telesign/namespace.php';
+require_once SD_AIO_MESSAGING_PATH . '/inc/sms/adapters/twilio/namespace.php';
+require_once SD_AIO_MESSAGING_PATH . '/inc/sms/adapters/telesign/namespace.php';
 
 // Bootstrap the module!
 spl_autoload_register( __NAMESPACE__ . '\\autoload' );
@@ -35,7 +35,7 @@ function autoload( string $class_name = '' ): void {
 	}
 
 	// Format the namespace.
-	$path          = SD_WP_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc/sms' . DIRECTORY_SEPARATOR;
+	$path          = SD_AIO_MESSAGING_PATH . DIRECTORY_SEPARATOR . 'inc/sms' . DIRECTORY_SEPARATOR;
 	$prefix_length = strlen( __NAMESPACE__ );
 	$class_name    = substr( $class_name, $prefix_length + 1 );
 	$class_name    = strtolower( $class_name );
@@ -87,7 +87,7 @@ function bootstrap(): void {
  *
  * Add new adapter like this -
  * add_filter(
- *     \Souptik\WPMessaging\SMS\SLUG . '_adapters',
+ *     \Souptik\AIOMessaging\SMS\SLUG . '_adapters',
  *     function( array $adapters = [] ): array {
  *          $adapters[ 'your_adapter' ] = [
  *              'name'    => __( 'Your Adapter', 'all-in-one-messaging' ),

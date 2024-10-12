@@ -5,13 +5,13 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\Email\WPMail;
+namespace Souptik\AIOMessaging\Email\WPMail;
 
 use WP_Error;
 
-use function Souptik\WPMessaging\Email\send;
+use function Souptik\AIOMessaging\Email\send;
 
-use const Souptik\WPMessaging\Email\SLUG;
+use const Souptik\AIOMessaging\Email\SLUG;
 
 // Bootstrap the module!
 bootstrap();

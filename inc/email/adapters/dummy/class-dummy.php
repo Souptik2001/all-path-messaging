@@ -7,7 +7,7 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\Email\Adapters\Dummy;
+namespace Souptik\AIOMessaging\Email\Adapters\Dummy;
 
 use Exception;
 use Utopia\Messaging\Adapter\Email as EmailAdapter;

@@ -13,7 +13,7 @@
  * SMS: Default adapter Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
+// 	$test = \Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
 // 	echo '<h4>SMS: Default Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );
@@ -25,7 +25,7 @@
  * SMS: Twilio Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+// 	$test = \Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
 // 	echo '<h4>SMS: Twilio Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );
@@ -37,7 +37,7 @@
  * SMS: Telesign Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\WPMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'telesign' );
+// 	$test = \Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'telesign' );
 // 	echo '<h4>SMS: Telesign Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );
@@ -67,7 +67,7 @@
  * Email: Default adapter Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\WPMessaging\Email\send(
+// 	$test = \Souptik\AIOMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'This is some long mail body.',
@@ -83,7 +83,7 @@
  * Email: Mailgun Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\WPMessaging\Email\send(
+// 	$test = \Souptik\AIOMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'<h1>This is some long mail body.</h1>',
@@ -103,7 +103,7 @@
  * Email: Mailgun Messaging - with headers.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\WPMessaging\Email\send(
+// 	$test = \Souptik\AIOMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'This is some long mail body.',
@@ -134,7 +134,7 @@
  * Email: Brevo Messaging - with headers.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\WPMessaging\Email\send(
+// 	$test = \Souptik\AIOMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'This is some long mail body.',

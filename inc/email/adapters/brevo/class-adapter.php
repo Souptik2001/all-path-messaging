@@ -5,12 +5,12 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\Email\Adapters\Brevo;
+namespace Souptik\AIOMessaging\Email\Adapters\Brevo;
 
-use Souptik\WPMessaging\Email\Adapters\Email_Adapter;
+use Souptik\AIOMessaging\Email\Adapters\Email_Adapter;
 use Utopia\Messaging\Adapter\Email;
 
-use const Souptik\WPMessaging\Email\SLUG as EMAIL_SLUG;
+use const Souptik\AIOMessaging\Email\SLUG as EMAIL_SLUG;
 
 /**
  * Adapter class.

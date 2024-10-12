@@ -5,13 +5,13 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\SMS\Adapters\Twilio;
+namespace Souptik\AIOMessaging\SMS\Adapters\Twilio;
 
-use Souptik\WPMessaging\SMS\Adapters\SMS_Adapter;
+use Souptik\AIOMessaging\SMS\Adapters\SMS_Adapter;
 use Utopia\Messaging\Adapter\SMS;
 use Utopia\Messaging\Adapter\SMS\Twilio;
 
-use const Souptik\WPMessaging\SMS\SLUG as SMS_SLUG;
+use const Souptik\AIOMessaging\SMS\SLUG as SMS_SLUG;
 
 /**
  * Adapter class.

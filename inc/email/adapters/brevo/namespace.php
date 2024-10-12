@@ -5,9 +5,9 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\Email\Adapters\Brevo;
+namespace Souptik\AIOMessaging\Email\Adapters\Brevo;
 
-use const Souptik\WPMessaging\Email\SLUG as EMAIL_SLUG;
+use const Souptik\AIOMessaging\Email\SLUG as EMAIL_SLUG;
 
 const SLUG = 'brevo';
 

@@ -5,9 +5,9 @@
  * @package all-in-one-messaging
  */
 
-namespace Souptik\WPMessaging\SMS\Adapters\Telesign;
+namespace Souptik\AIOMessaging\SMS\Adapters\Telesign;
 
-use const Souptik\WPMessaging\SMS\SLUG as SMS_SLUG;
+use const Souptik\AIOMessaging\SMS\SLUG as SMS_SLUG;
 
 const SLUG = 'telesign';
 
