@@ -116,9 +116,42 @@ Just remove the last parameter! And now it uses the default selected adapter -
 
 ### Creating your own adapter 🛠️
 
-Here comes the cool part fellow developers!
+Here comes the cool part fellow developers! 💻
 
-Docs coming soon! ⏳
+**Tip:** I have provided a dummy adapter for each service at `inc/<service>/adapters/dummy/`.
+
+Consider that as the starting point and let's understand what each file does.
+
+- Let's start with `namespace.php`. It is the entry point of your adapter.
+  - In that you will see a simple `bootstrap` function.
+  - In that function we are hooking into `EMAIL_SLUG . '_adapters'` and registering our adapter.
+  - We pass the following data -
+    - `slug`
+    - `name`
+    - `adapter` class object.
+    - `options` - An array defining the settings required for this adapter, which will be used to automatically display the options on the settings page.
+- Next is `class-adapter.php`, which is the Adapter class, which we initialized in the above file and passed it to `adapter`. It contains three simple functions -
+  - `get_settings_fields` - This is the function which returns the array of options, which we used in the above file for `options`. Each option, will have -
+    - The key as the name of the option.
+    - And three values -
+      - `label` - Label to display in the settings page beside the input.
+      - `type` - Type of the field.
+      - `sanitize_callback`
+  - `get_settings` - This function returns an associative array, whose keys are the name of the options and the value as the value of the options.
+  - `get_adapter` - This function will just return the core provider class, which is responsible for processing the message.
+    - First check if `Utopia Messaging` already provides the provider or not [here](https://github.com/utopia-php/messaging?tab=readme-ov-file#adapters), for example `Utopia\Messaging\Adapter\Email\Mailgun`.
+    - If it is present just use it. Easy peasy! ✨
+    - But if not, let's code it ourself, because `Utopia Messaging` makes it so easy to create a new adapter!
+- `class-dummy.php` is for that purpose, assuming you don't get a provider already present in `Utopia Messaging`.
+  - It's basically a child class of `EmailAdapter` or `SMSAdapter`, which abstract a lot of stuff for us!
+  - Let me explain two main functions, `_construct` and `process`. *Rest of the functions and properties are self-explanatory!* 😉
+    - In the `_construct` function just put the arguments which you want to accept. That's it! And now they will be available everywhere else as `$this->param_name`!
+    - The `process` function is the place where you have to write the main logic of calling your providers API to send the message.
+      - As said above all the credentials/data you accepted through constructor are available as `$this->param_name`.
+      - Build the `body` and the `headers`.
+      - And then you can use the `$this->request` function as demonstrated in the dummy!
+      - Create a response using Utopia's `Response` class.
+      - Handle the errors, populate the response, return! Done! 🚀
 
 == Installation ==
 
