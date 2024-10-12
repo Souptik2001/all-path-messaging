@@ -10,6 +10,9 @@ echo $BUILT_BRANCH
 
 git checkout $BUILT_BRANCH || git checkout -b $BUILT_BRANCH
 
+# Merge the parent branch
+git merge $PARENT_BRANCH
+
 # Cleanup
 rm -f README.md
 rm -rf .tests
