@@ -23,13 +23,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Composer cache
-        id: composer-cache
-        uses: actions/cache@v3
-        with:
-          path: vendor
-          key: composer-${{ hashFiles( 'composer.lock' ) }}-${{ hashFiles( '.github/workflows/main.yml' ) }}
-
       - name: NodeJS cache
         id: node-cache
         uses: actions/cache@v3
@@ -37,8 +30,8 @@ jobs:
           path: node_modules
           key: node-${{ hashFiles( 'package-lock.json' ) }}-${{ hashFiles( '.github/workflows/main.yml' ) }}
 
+      # TODO: Composer cache was causing some issue in the pipeline, therefore removed it. Need to fix and bring it back.
       - name: Install Composer dependencies
-        if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install
 
       - name: Install NodeJS dependencies
