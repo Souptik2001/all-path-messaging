@@ -59,6 +59,5 @@ jobs:
 
       - name: Push to built branch
         env:
-          PARENT_BRANCH: ${{ env.BRANCH_NAME }}
           BUILT_BRANCH: ${{ env.BRANCH_NAME }}-built
         run: bash .bin/prepare.sh
