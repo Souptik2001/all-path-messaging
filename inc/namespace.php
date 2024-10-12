@@ -2,7 +2,7 @@
 /**
  * Namespace functions.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging;
@@ -76,7 +76,7 @@ function bootstrap(): void {
  *     'wp_messaging_services',
  *     function ( array $services = [] ): array {
  *         $services[] = [
- *             'name'            => __( 'SMS: WP Messaging', 'wp-messaging' ),
+ *             'name'            => __( 'SMS: All in One Messaging', 'all-in-one-messaging' ),
  *             'menu_slug'       => str_replace( '_', '-', SLUG ),
  *             'menu_capability' => apply_filters( 'wp_messaging_sms_user_capability', 'manage_options' ),
  *             'menu_renderer'   => [ Admin::get_instance(), 'options_page' ],

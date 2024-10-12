@@ -2,7 +2,7 @@
 /**
  * SMS: Admin side things.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\SMS;
@@ -65,7 +65,7 @@ class Admin {
 			}
 
 			// Output settings update message.
-			echo '<div class="updated"><p>' . esc_html__( 'Options saved.', 'wp-messaging' ) . '</p></div>';
+			echo '<div class="updated"><p>' . esc_html__( 'Options saved.', 'all-in-one-messaging' ) . '</p></div>';
 		}
 
 		// Load template.

@@ -4,7 +4,7 @@
  *
  * This file will not be present if Utopia provides the adapter you are looking for. Just use that!
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\Adapters\Dummy;

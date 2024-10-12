@@ -2,7 +2,7 @@
 /**
  * Brevo adapter: Namespace functions.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\Adapters\Brevo;
@@ -26,7 +26,7 @@ function bootstrap(): void {
 		function ( array $adapters = [] ): array {
 			// Add the adapter.
 			$adapters[ SLUG ] = [
-				'name'    => __( 'Brevo', 'wp-messaging' ),
+				'name'    => __( 'Brevo', 'all-in-one-messaging' ),
 				'adapter' => new Adapter(),
 				'options' => Adapter::get_settings_fields(),
 			];

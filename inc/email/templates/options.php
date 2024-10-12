@@ -2,7 +2,7 @@
 /**
  * Email options template.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email;
@@ -12,7 +12,7 @@ namespace Souptik\WPMessaging\Email;
 <div class="wrap">
 
 	<h2>
-		<?php esc_html_e( 'Email Options: WP Messaging', 'wp-messaging' ); ?>
+		<?php esc_html_e( 'Email Options: All in One Messaging', 'all-in-one-messaging' ); ?>
 	</h2>
 
 	<div class="card">
@@ -21,12 +21,12 @@ namespace Souptik\WPMessaging\Email;
 				<tbody>
 					<tr>
 						<th>
-							<h3><?php esc_html_e( 'Common Settings', 'wp-messaging' ); ?></h3>
+							<h3><?php esc_html_e( 'Common Settings', 'all-in-one-messaging' ); ?></h3>
 						</th>
 					</tr>
 					<tr>
 						<th scope="row">
-							<label for="email_from_name"><?php esc_html_e( 'From Name', 'wp-messaging' ); ?></label>
+							<label for="email_from_name"><?php esc_html_e( 'From Name', 'all-in-one-messaging' ); ?></label>
 						</th>
 						<td>
 							<input
@@ -40,7 +40,7 @@ namespace Souptik\WPMessaging\Email;
 					</tr>
 					<tr>
 						<th scope="row">
-							<label for="email_from_address"><?php esc_html_e( 'From Address', 'wp-messaging' ); ?></label>
+							<label for="email_from_address"><?php esc_html_e( 'From Address', 'all-in-one-messaging' ); ?></label>
 						</th>
 						<td>
 							<input
@@ -55,7 +55,7 @@ namespace Souptik\WPMessaging\Email;
 					<tr>
 					<th scope="row">
 							<label for="override_wp_mail">
-								<?php esc_html_e( 'Override wp_mail functionality', 'wp-messaging' ); ?>
+								<?php esc_html_e( 'Override wp_mail functionality', 'all-in-one-messaging' ); ?>
 							</label>
 						</th>
 						<td>
@@ -71,14 +71,14 @@ namespace Souptik\WPMessaging\Email;
 
 					<tr>
 						<th>
-							<h3><?php esc_html_e( 'Adapters Settings', 'wp-messaging' ); ?></h3>
+							<h3><?php esc_html_e( 'Adapters Settings', 'all-in-one-messaging' ); ?></h3>
 						</th>
 					</tr>
 					<?php Admin::get_instance()->adapters_settings_template(); ?>
 				</tbody>
 			</table>
 			<?php wp_nonce_field( SLUG . '_options', SLUG . '_nonce' ); ?>
-			<p class="submit"><input class="button-primary" value="<?php esc_html_e( 'Save', 'wp-messaging' ); ?>" type="submit"></p>
+			<p class="submit"><input class="button-primary" value="<?php esc_html_e( 'Save', 'all-in-one-messaging' ); ?>" type="submit"></p>
 		</form>
 	</div> <!-- .card -->
 

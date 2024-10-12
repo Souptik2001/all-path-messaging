@@ -2,7 +2,7 @@
 /**
  * SMS options template.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\SMS;
@@ -12,7 +12,7 @@ namespace Souptik\WPMessaging\SMS;
 <div class="wrap">
 
 	<h2>
-		<?php esc_html_e( 'SMS Options: WP Messaging', 'wp-messaging' ); ?>
+		<?php esc_html_e( 'SMS Options: All in One Messaging', 'all-in-one-messaging' ); ?>
 	</h2>
 
 	<div class="card">
@@ -21,7 +21,7 @@ namespace Souptik\WPMessaging\SMS;
 				<tbody>
 					<tr>
 						<th>
-							<h3><?php esc_html_e( 'Adapter Settings', 'wp-messaging' ); ?></h3>
+							<h3><?php esc_html_e( 'Adapter Settings', 'all-in-one-messaging' ); ?></h3>
 						</th>
 					</tr>
 
@@ -29,7 +29,7 @@ namespace Souptik\WPMessaging\SMS;
 				</tbody>
 			</table>
 			<?php wp_nonce_field( SLUG . '_options', SLUG . '_nonce' ); ?>
-			<p class="submit"><input class="button-primary" value="<?php esc_html_e( 'Save', 'wp-messaging' ); ?>" type="submit"></p>
+			<p class="submit"><input class="button-primary" value="<?php esc_html_e( 'Save', 'all-in-one-messaging' ); ?>" type="submit"></p>
 		</form>
 	</div> <!-- .card -->
 

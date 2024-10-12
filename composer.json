@@ -1,5 +1,5 @@
 {
-    "name": "souptik/wp-messaging",
+    "name": "souptik/all-in-one-messaging",
     "description": "Limitless Communication: All-in-One, super scalable, messaging Solution for WordPress.",
     "require": {
         "utopia-php/messaging": "^0.10.0"

@@ -2,7 +2,7 @@
 /**
  * Brevo adapter: Main Sender.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\Adapters\Brevo;

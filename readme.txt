@@ -1,4 +1,4 @@
-=== WP Messaging ===
+=== All in One Messaging ===
 Contributors: souptik
 Tags: messaging, email, sms, push-notification
 Requires at least: 4.4
@@ -10,7 +10,7 @@ Limitless Communication: All-in-one, super scalable, messaging Solution for Word
 
 == Description ==
 
-[Check out the Github Repository ♥](https://github.com/Souptik2001/wp-messaging)
+[Check out the Github Repository ♥](https://github.com/Souptik2001/all-in-one-messaging)
 
 **Limitless Communication:** All-in-one, super scalable, messaging Solution for WordPress.
 
@@ -56,8 +56,8 @@ Send an email through a particular adapter (with headers 😉) -
     ],
    ],
    'attachments' => [
-    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
-     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
    ],
   ],
   'mailgun'
@@ -81,8 +81,8 @@ Just remove the last parameter! And now it uses the default selected adapter -
     ],
    ],
    'attachments' => [
-    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
-     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
    ],
   ],
  );
@@ -155,7 +155,7 @@ Consider that as the starting point and let's understand what each file does.
 
 == Installation ==
 
-Upload 'wp-messaging' to the '/wp-content/plugins/' directory.
+Upload 'all-in-one-messaging' to the '/wp-content/plugins/' directory.
 
 Activate the plugin through the 'Plugins' menu in WordPress.
 

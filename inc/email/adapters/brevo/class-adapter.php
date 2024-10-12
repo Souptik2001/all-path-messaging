@@ -2,7 +2,7 @@
 /**
  * Brevo adapter: Adapter class.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\Adapters\Brevo;
@@ -61,7 +61,7 @@ class Adapter extends Email_Adapter {
 		// Return the settings fields.
 		return [
 			EMAIL_SLUG . '_' . SLUG . '_api_key' => [
-				'label'             => __( 'API KEY', 'wp-messaging' ),
+				'label'             => __( 'API KEY', 'all-in-one-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

@@ -11,6 +11,6 @@
       "WP_DEBUG_LOG": "/var/www/html/wp-content/debug.log"
     },
     "mappings": {
-      "wp-content/mu-plugins/test-wp-messaging.php": "./.tests/test-mu-plugin/plugin.php"
+      "wp-content/mu-plugins/test-all-in-one-messaging.php": "./.tests/test-mu-plugin/plugin.php"
   }
 }

@@ -2,7 +2,7 @@
 /**
  * Telesign adapter: Namespace functions.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\SMS\Adapters\Telesign;
@@ -26,7 +26,7 @@ function bootstrap(): void {
 		function ( array $adapters = [] ): array {
 			// Add the adapter.
 			$adapters[ SLUG ] = [
-				'name'    => __( 'Telesign', 'wp-messaging' ),
+				'name'    => __( 'Telesign', 'all-in-one-messaging' ),
 				'adapter' => new Adapter(),
 				'options' => Adapter::get_settings_fields(),
 			];

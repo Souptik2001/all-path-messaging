@@ -2,7 +2,7 @@
 /**
  * Telesign adapter: Adapter class.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\SMS\Adapters\Telesign;
@@ -64,12 +64,12 @@ class Adapter extends SMS_Adapter {
 		// Return the settings fields.
 		return [
 			SMS_SLUG . '_' . SLUG . '_customer_id' => [
-				'label'             => __( 'Customer ID', 'wp-messaging' ),
+				'label'             => __( 'Customer ID', 'all-in-one-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			SMS_SLUG . '_' . SLUG . '_api_key'     => [
-				'label'             => __( 'API Key', 'wp-messaging' ),
+				'label'             => __( 'API Key', 'all-in-one-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

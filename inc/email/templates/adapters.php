@@ -2,7 +2,7 @@
 /**
  * Email adapters settings template.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email;
@@ -31,7 +31,7 @@ foreach ( $adapters as $key => $adapter ) {
 					<?php checked( get_option( SLUG . '_active_adapter', '' ), $key ); ?>
 				>
 				<label for="<?php echo esc_attr( $key ); ?>">
-					<?php esc_html_e( 'Set as default adapter', 'wp-messaging' ); ?>
+					<?php esc_html_e( 'Set as default adapter', 'all-in-one-messaging' ); ?>
 				</label>
 			</td>
 		</tr>

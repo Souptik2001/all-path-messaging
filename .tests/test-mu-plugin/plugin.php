@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Test MU Plugin for wp-messaging.
+ * Plugin Name: Test MU Plugin for all-in-one-messaging.
  *
  * This mu-plugin contains test for each service's each adapter.
  * Just un-comment the one you want to test and see it in action.
  * Please change the input values as required.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 /**
@@ -117,8 +117,8 @@
 // 				],
 // 			],
 // 			'attachments' => [
-// 				trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
-// 		 		'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+// 				trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+// 		 		'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
 // 			],
 // 		],
 // 		'mailgun'
@@ -151,7 +151,7 @@
 // 			],
 // 			'attachments' => [
 // 				// For Brevo only few supported file types are allowed, for example PHP is not supported.
-// 		 		'SameFileDifferentName.txt' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-wp-messaging.php',
+// 		 		'SameFileDifferentName.txt' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
 // 			],
 // 		],
 // 		'brevo'

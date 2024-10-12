@@ -2,7 +2,7 @@
 /**
  * Email: WP-Mail: Namespace functions.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\WPMail;

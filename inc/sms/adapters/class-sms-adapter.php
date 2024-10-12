@@ -2,7 +2,7 @@
 /**
  * SMS Adapter: SMS_Adapter class.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\SMS\Adapters;

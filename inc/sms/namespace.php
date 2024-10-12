@@ -2,7 +2,7 @@
 /**
  * SMS: Namespace functions.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\SMS;
@@ -70,7 +70,7 @@ function bootstrap(): void {
 		'wp_messaging_services',
 		function ( array $services = [] ): array {
 			$services[] = [
-				'name'            => __( 'SMS: WP Messaging', 'wp-messaging' ),
+				'name'            => __( 'SMS: All in One Messaging', 'all-in-one-messaging' ),
 				'menu_slug'       => str_replace( '_', '-', SLUG ),
 				'menu_capability' => apply_filters( 'wp_messaging_sms_user_capability', 'manage_options' ),
 				'menu_renderer'   => [ Admin::get_instance(), 'options_page' ],
@@ -90,7 +90,7 @@ function bootstrap(): void {
  *     \Souptik\WPMessaging\SMS\SLUG . '_adapters',
  *     function( array $adapters = [] ): array {
  *          $adapters[ 'your_adapter' ] = [
- *              'name'    => __( 'Your Adapter', 'wp-messaging' ),
+ *              'name'    => __( 'Your Adapter', 'all-in-one-messaging' ),
  *              'adapter' => new Your_Adapter_Class(),
  *              'options' => Your_Adapter_Class::get_settings_fields(),
  *          ];
@@ -187,7 +187,7 @@ function send( array $to = [], string $message = '', string $adapter = '' ): arr
 
 	// Return early if adapter not found.
 	if ( empty( $adapters[ $adapter ] ) ) {
-		return new WP_Error( 'adapter_not_found', __( 'Adapter not found.', 'wp-messaging' ) );
+		return new WP_Error( 'adapter_not_found', __( 'Adapter not found.', 'all-in-one-messaging' ) );
 	}
 
 	// Get the adapter.
@@ -195,7 +195,7 @@ function send( array $to = [], string $message = '', string $adapter = '' ): arr
 
 	// Return early if adapter not configured properly.
 	if ( null === $adapter_object ) {
-		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'wp-messaging' ) );
+		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'all-in-one-messaging' ) );
 	}
 
 	// Initialize the message.

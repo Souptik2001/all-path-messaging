@@ -2,7 +2,7 @@
 /**
  * Email Adapter: Email_Adapter class.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\Adapters;

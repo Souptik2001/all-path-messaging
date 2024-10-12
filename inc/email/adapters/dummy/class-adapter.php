@@ -2,7 +2,7 @@
 /**
  * Dummy adapter: Adapter class.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\Adapters\Dummy;
@@ -69,12 +69,12 @@ class Adapter extends Email_Adapter {
 		// Return the settings fields.
 		return [
 			EMAIL_SLUG . '_' . SLUG . '_api_key_or_something' => [
-				'label'             => __( 'API KEY or Something else', 'wp-messaging' ),
+				'label'             => __( 'API KEY or Something else', 'all-in-one-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			EMAIL_SLUG . '_' . SLUG . '_something_else'       => [
-				'label'             => __( 'Something else', 'wp-messaging' ),
+				'label'             => __( 'Something else', 'all-in-one-messaging' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

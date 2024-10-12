@@ -5,7 +5,7 @@
 	</rule>
 
 	<file>./inc</file>
-	<file>./wp-messaging.php</file>
+	<file>./all-in-one-messaging.php</file>
 	<file>./.tests</file>
 
 	<exclude-pattern>./.tests/test-mu-plugin/plugin.php</exclude-pattern>

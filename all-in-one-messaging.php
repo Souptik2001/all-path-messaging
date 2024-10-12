@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: WP Messaging
+ * Plugin Name: All in One Messaging
  * Description: Limitless Communication: All-in-One, super scalable, messaging Solution for WordPress.
  * Version: 1.0.0
  * Author: Souptik Datta
  * Author URI: https://souptik.dev
- * Text Domain: wp-messaging
+ * Text Domain: all-in-one-messaging
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging;

@@ -2,7 +2,7 @@
 /**
  * Twilio adapter: Adapter class.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\SMS\Adapters\Twilio;
@@ -66,17 +66,17 @@ class Adapter extends SMS_Adapter {
 		// Return the settings fields.
 		return [
 			SMS_SLUG . '_' . SLUG . '_account_sid' => [
-				'label'             => __( 'Account SID', 'wp-messaging' ),
+				'label'             => __( 'Account SID', 'all-in-one-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			SMS_SLUG . '_' . SLUG . '_auth_token'  => [
-				'label'             => __( 'Auth Token', 'wp-messaging' ),
+				'label'             => __( 'Auth Token', 'all-in-one-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			SMS_SLUG . '_' . SLUG . '_from'        => [
-				'label'             => __( 'From phone number', 'wp-messaging' ),
+				'label'             => __( 'From phone number', 'all-in-one-messaging' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

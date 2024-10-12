@@ -2,7 +2,7 @@
 /**
  * Dummy adapter: Namespace functions.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\Adapters\Dummy;
@@ -26,7 +26,7 @@ function bootstrap(): void {
 		function ( array $adapters = [] ): array {
 			// Add the adapter.
 			$adapters[ SLUG ] = [
-				'name'    => __( 'Dummy', 'wp-messaging' ),
+				'name'    => __( 'Dummy', 'all-in-one-messaging' ),
 				'adapter' => new Adapter(),
 				'options' => Adapter::get_settings_fields(),
 			];

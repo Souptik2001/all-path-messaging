@@ -2,7 +2,7 @@
 /**
  * Mailgun adapter: Namespace functions.
  *
- * @package wp-messaging
+ * @package all-in-one-messaging
  */
 
 namespace Souptik\WPMessaging\Email\Adapters\Mailgun;
@@ -26,7 +26,7 @@ function bootstrap(): void {
 		function ( array $adapters = [] ): array {
 			// Add the adapter.
 			$adapters[ SLUG ] = [
-				'name'    => __( 'Mailgun', 'wp-messaging' ),
+				'name'    => __( 'Mailgun', 'all-in-one-messaging' ),
 				'adapter' => new Adapter(),
 				'options' => Adapter::get_settings_fields(),
 			];
