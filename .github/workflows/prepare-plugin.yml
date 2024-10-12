@@ -1,17 +1,20 @@
 name: Prepare Plugin for deployment
 
-concurrency: production
+concurrency: prepare-plugin
 
 on:
   push:
     branches:
       - main
 
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name: production
+      name: prepare-plugin
 
     steps:
       - name: Set up PHP
