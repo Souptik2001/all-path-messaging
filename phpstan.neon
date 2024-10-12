@@ -8,6 +8,8 @@ parameters:
 		- wordpress
 	paths:
 		- inc
+	excludePaths:
+		- wordpress/wp-admin/includes/noop.php
 	ignoreErrors:
 		- '#Parameter \#1 \$value of function strval expects bool\|float\|int\|resource\|string\|null, (.*) given.#'
 		- '#Constant SD_WP_MESSAGING_PATH not found.#'
