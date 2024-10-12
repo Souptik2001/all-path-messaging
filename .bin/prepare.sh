@@ -25,6 +25,7 @@ rm -f package.json
 rm -f package-lock.json
 rm -f phpcs.xml
 rm -f phpstan.neon
+rm -rf node_modules
 
 # Check if we have changes
 if [[ -z $(git status -s) ]]; then
