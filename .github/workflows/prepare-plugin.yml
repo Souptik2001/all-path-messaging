@@ -31,6 +31,8 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Composer cache
         id: composer-cache
