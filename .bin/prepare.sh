@@ -23,7 +23,6 @@ rm composer.lock
 rm LICENSE
 rm package.json
 rm package-lock.json
-rm phpunit.xml
 rm phpstan.neon
 
 # Check if we have changes
