@@ -11,20 +11,20 @@ echo $BUILT_BRANCH
 git checkout $BUILT_BRANCH || git checkout -b $BUILT_BRANCH
 
 # Cleanup
-rm README.md
+rm -f README.md
 rm -rf .tests
 rm -rf .github
 rm -rf .bin
-rm .nvmrc
-rm .gitignore
-rm .wp-env.json
-rm composer.json
-rm composer.lock
-rm LICENSE
-rm package.json
-rm package-lock.json
-rm phpcs.xml
-rm phpstan.neon
+rm -f .nvmrc
+rm -f .gitignore
+rm -f .wp-env.json
+rm -f composer.json
+rm -f composer.lock
+rm -f LICENSE
+rm -f package.json
+rm -f package-lock.json
+rm -f phpcs.xml
+rm -f phpstan.neon
 
 # Check if we have changes
 if [[ -z $(git status -s) ]]; then
