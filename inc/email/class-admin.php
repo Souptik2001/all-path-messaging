@@ -47,12 +47,12 @@ class Admin {
 			&& wp_verify_nonce( sanitize_key( $_POST[ SLUG . '_nonce' ] ), SLUG . '_options' )
 		) {
 			// Set the active adapter.
-			update_option( SLUG . '_active_adapter', sanitize_text_field( $_POST[ SLUG . '_active_adapter' ] ?? '' ) );
+			update_option( SLUG . '_active_adapter', sanitize_text_field( wp_unslash( $_POST[ SLUG . '_active_adapter' ] ?? '' ) ) ); // @phpstan-ignore argument.type (Conflicting with PHPCS. It's confirm that wp_unslash will return same data type as supplied.)
 
 			// Set common settings.
-			update_option( SLUG . '_from_name', sanitize_text_field( $_POST[ SLUG . '_from_name' ] ?? '' ) );
-			update_option( SLUG . '_from_email', sanitize_email( $_POST[ SLUG . '_from_email' ] ?? '' ) );
-			update_option( SLUG . '_hijack_wp_mail', 'yes' === sanitize_text_field( $_POST[ SLUG . '_hijack_wp_mail' ] ?? 'no' ) );
+			update_option( SLUG . '_from_name', sanitize_text_field( wp_unslash( $_POST[ SLUG . '_from_name' ] ?? '' ) ) ); // @phpstan-ignore argument.type (Conflicting with PHPCS. It's confirm that wp_unslash will return same data type as supplied.)
+			update_option( SLUG . '_from_email', sanitize_email( wp_unslash( $_POST[ SLUG . '_from_email' ] ?? '' ) ) ); // @phpstan-ignore argument.type (Conflicting with PHPCS. It's confirm that wp_unslash will return same data type as supplied.)
+			update_option( SLUG . '_hijack_wp_mail', 'yes' === sanitize_text_field( wp_unslash( $_POST[ SLUG . '_hijack_wp_mail' ] ?? 'no' ) ) ); // @phpstan-ignore argument.type (Conflicting with PHPCS. It's confirm that wp_unslash will return same data type as supplied.)
 
 			// Get all the adapters.
 			$adapters = get_adapters();
@@ -63,8 +63,13 @@ class Admin {
 				if ( ! empty( $adapter['options'] ) ) {
 					// Loop over all the settings.
 					foreach ( $adapter['options'] as $option_key => $option ) {
+						// Skip if not present in POST.
+						if ( ! isset( $_POST[ $option_key ] ) ) {
+							continue;
+						}
+
 						// Update the option.
-						update_option( $option_key, call_user_func( $option['sanitize_callback'], $_POST[ $option_key ] ) );
+						update_option( $option_key, call_user_func( $option['sanitize_callback'], wp_unslash( $_POST[ $option_key ] ) ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- We are already sanitizing using the sanitize callback provided.
 					}
 				}
 			}
