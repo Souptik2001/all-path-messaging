@@ -193,6 +193,47 @@ Consider that as the starting point and let's understand what each file does.
 
 Thank you message coming soon!
 
+### FAQs
+
+<details>
+  <summary>
+    <em>
+      I have a codebase, where I have used `wp_mail`. Do I need to make any changes to the codebase after installing this plugin?
+    </em>
+  </summary>
+
+  <br/>
+
+  <p>Good news - no!</p>
+  <p>You just have to check the `Override wp_mail functionality checkbox` in the settings and that's it! All your mails you are triggering through `wp_mail` will be sent through your selected provider!</p>
+</details>
+
+<details>
+  <summary>
+    <em>
+      I am already using an email marketing plugin. Can I use this plugin to use as the email sending service?
+    </em>
+  </summary>
+
+  <br/>
+
+  <p>Absolutely!</p>
+  <p>The plugin is made for that only! Keep using your existing email marketing plugin and just set the email provider as default (i.e it should use `wp_mail`). And that's it the emails will be send through the desired provider you select in this plugin.</p>
+</details>
+
+<details>
+  <summary>
+    <em>
+      I need a provider called `xyz`, which is not present currently in this plugin. Do I have to ask you to integrate that?
+    </em>
+  </summary>
+
+  <br/>
+
+  <p>If you know coding! - You don't have to wait for it! [Go ahead and create your own adapter in your plugin by extending this plugin.](https://github.com/Souptik2001/wp-messaging/wiki/Create-your-own-Adapter-%F0%9F%9B%A0%EF%B8%8F)</p>
+  <p>If you are non-tech! - Please create an [issue](https://github.com/Souptik2001/wp-messaging/issues) over here, and I will try to integrate the provider ASAP.</p>
+</details>
+
 ## Contribute
 
 Feel free to open a issue or pull request if you want to contribute anything to this plugin!

@@ -5,6 +5,8 @@ Requires at least: 4.4
 Tested up to: 6.6.2
 Requires PHP: 5.6
 Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Limitless Communication: All-in-one, super scalable, messaging Solution for WordPress.
 
@@ -158,6 +160,23 @@ Consider that as the starting point and let's understand what each file does.
 Upload 'all-in-one-messaging' to the '/wp-content/plugins/' directory.
 
 Activate the plugin through the 'Plugins' menu in WordPress.
+
+== Frequently Asked Questions ==
+
+= I have a codebase, where I have used `wp_mail`. Do I need to make any changes to the codebase after installing this plugin? =
+
+Good news - no!
+You just have to check the `Override wp_mail functionality checkbox` in the settings and that's it! All your mails you are triggering through `wp_mail` will be sent through your selected provider!
+
+= I am already using an email marketing plugin. Can I use this plugin to use as the email sending service? =
+
+Absolutely!
+The plugin is made for that only! Keep using your existing email marketing plugin and just set the email provider as default (i.e it should use `wp_mail`). And that's it the emails will be send through the desired provider you select in this plugin.
+
+= I need a provider called `xyz`, which is not present currently in this plugin. Do I have to ask you to integrate that? =
+
+If you know coding! - You don't have to wait for it! [Go ahead and create your own adapter in your plugin by extending this plugin.](https://github.com/Souptik2001/wp-messaging/wiki/Create-your-own-Adapter-%F0%9F%9B%A0%EF%B8%8F)
+If you are non-tech! - Please create an [issue](https://github.com/Souptik2001/wp-messaging/issues) over here, and I will try to integrate the provider ASAP.
 
 == Screenshots ==
 
