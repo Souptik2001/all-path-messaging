@@ -155,6 +155,38 @@ Consider that as the starting point and let's understand what each file does.
       - Create a response using Utopia's `Response` class.
       - Handle the errors, populate the response, return! Done! 🚀
 
+== External services ==
+
+= Brevo =
+
+This plugin connect's to Brevo's API to send emails through Brevo. This is the [API](https://api.brevo.com/v3/smtp/email) it sends the request to.
+The request is send everytime a mail is sent, and Brevo is selected as the default adapter from the plugin settings (or the function to send email through Brevo is directly invoked in the code).
+Here is the [Terms of Use](https://www.brevo.com/legal/termsofuse/) and [Privacy Policy](https://www.brevo.com/legal/privacypolicy/) of the service.
+
+= AWS SES =
+
+This plugin connect's to AWS SES's API to send emails through AWS SES.
+The request is send everytime a mail is sent, and AWS SES is selected as the default adapter from the plugin settings (or the function to send email through AWS SES is directly invoked in the code).
+Here is the [Terms of Use](https://aws.amazon.com/service-terms/) and [Privacy Policy](https://docs.aws.amazon.com/ses/latest/dg/data-protection.html) of the service.
+
+= Mailgun =
+
+This plugin connect's to Mailgun's API to send emails through Mailgun.
+The request is send everytime a mail is sent, and Mailgun is selected as the default adapter from the plugin settings (or the function to send email through Mailgun is directly invoked in the code).
+Here is the [Terms of Use](https://www.mailgun.com/legal/terms/) and [Privacy Policy](https://www.mailgun.com/legal/privacy-policy/) of the service.
+
+= Telesign =
+
+This plugin connect's to Telesign's API to send SMS through Telesign.
+The request is send everytime the function to send SMS is invoked with the Adapter as Telesign or the default adapter is set as Telesign.
+Here is the [Terms of Use](hhttps://www.telesign.com/telesign-terms-of-service) and [Privacy Policy](https://www.telesign.com/privacy-policy) of the service.
+
+= Twilio =
+
+This plugin connect's to Twilio's API to send SMS through Twilio.
+The request is send everytime the function to send SMS is invoked with the Adapter as Twilio or the default adapter is set as Twilio.
+Here is the [Terms of Use](https://www.twilio.com/en-us/legal/tos) and [Privacy Policy](https://www.twilio.com/en-us/legal/privacy) of the service.
+
 == Installation ==
 
 Upload 'all-path-messaging' to the '/wp-content/plugins/' directory.

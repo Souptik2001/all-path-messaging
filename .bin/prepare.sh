@@ -28,14 +28,13 @@ rm -rf .bin
 rm -f .nvmrc
 rm -f .gitignore
 rm -f .wp-env.json
-rm -f composer.json
-rm -f composer.lock
 rm -f LICENSE
 rm -f package.json
 rm -f package-lock.json
 rm -f phpcs.xml
 rm -f phpstan.neon
 rm -rf node_modules
+rm -rf inc/email/adapters/dummy
 
 # Check if we have changes.
 if [[ -z $(git status -s) ]]; then
