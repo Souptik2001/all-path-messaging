@@ -17,6 +17,7 @@ const SLUG = 'wp_messaging_email';
 // Load different email adapters.
 require_once SD_AIO_MESSAGING_PATH . '/inc/email/adapters/mailgun/namespace.php';
 require_once SD_AIO_MESSAGING_PATH . '/inc/email/adapters/brevo/namespace.php';
+require_once SD_AIO_MESSAGING_PATH . '/inc/email/adapters/aws-ses/namespace.php';
 
 // Sub-module to hijack `wp_mail` function.
 require_once SD_AIO_MESSAGING_PATH . '/inc/email/wp-mail/namespace.php';
@@ -48,7 +49,7 @@ function autoload( string $class_name = '' ): void {
 
 	// Add the namespace.
 	if ( false !== $last_ns_pos ) {
-		$namespace  = substr( $class_name, 0, $last_ns_pos );
+		$namespace  = str_replace( '_', '-', substr( $class_name, 0, $last_ns_pos ) );
 		$class_name = substr( $class_name, $last_ns_pos + 1 );
 		$file       = str_replace( '\\', DIRECTORY_SEPARATOR, $namespace ) . DIRECTORY_SEPARATOR;
 	}

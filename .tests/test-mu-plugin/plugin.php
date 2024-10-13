@@ -162,3 +162,35 @@
 // 	echo '</pre>';
 // 	exit();
 // } );
+
+/**
+ * Email: AWS SES Messaging - with headers.
+ */
+// add_action( 'init', function () {
+// 	$test = \Souptik\AIOMessaging\Email\send(
+// 		[ 'dev2@souptik.dev' ],
+// 		'Yay its working!',
+// 		'<strong>This is some</strong> long mail body.',
+// 		'',
+// 		'dev1@souptik.dev', // Use verified email address for the AWS credential you are using.
+// 		[
+// 			'reply_to_name' => 'Reply Test',
+// 			'reply_to_email' => 'dev2@souptik.dev',
+// 			'cc' => [
+// 				[
+// 					'name'  => 'CC Test',
+// 					'email' => 'cc@souptik.dev',
+// 				],
+// 			],
+// 			'attachments' => [
+// 		 		'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+// 			],
+// 		],
+// 		'aws_ses'
+// 	);
+// 	echo '<h4>Email: AWS SES Messaging -- Triggered from `test-mu-plugin`</h4>';
+// 	echo '<pre>';
+// 	print_r( $test );
+// 	echo '</pre>';
+// 	exit();
+// } );
