@@ -2,15 +2,15 @@
 /**
  * AWS SES adapter: Adapter class.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters\AWS_SES;
+namespace Souptik\AllPathMessaging\Email\Adapters\AWS_SES;
 
-use Souptik\AIOMessaging\Email\Adapters\Email_Adapter;
+use Souptik\AllPathMessaging\Email\Adapters\Email_Adapter;
 use Utopia\Messaging\Adapter\Email;
 
-use const Souptik\AIOMessaging\Email\SLUG as EMAIL_SLUG;
+use const Souptik\AllPathMessaging\Email\SLUG as EMAIL_SLUG;
 
 /**
  * Adapter class.
@@ -65,17 +65,17 @@ class Adapter extends Email_Adapter {
 		// Return the settings fields.
 		return [
 			EMAIL_SLUG . '_' . SLUG . '_region' => [
-				'label'             => __( 'Region', 'all-in-one-messaging' ),
+				'label'             => __( 'Region', 'all-path-messaging' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			EMAIL_SLUG . '_' . SLUG . '_key'    => [
-				'label'             => __( 'Key', 'all-in-one-messaging' ),
+				'label'             => __( 'Key', 'all-path-messaging' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			EMAIL_SLUG . '_' . SLUG . '_secret' => [
-				'label'             => __( 'Secret', 'all-in-one-messaging' ),
+				'label'             => __( 'Secret', 'all-path-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

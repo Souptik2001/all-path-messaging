@@ -2,15 +2,15 @@
 /**
  * Dummy adapter: Adapter class.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters\Dummy;
+namespace Souptik\AllPathMessaging\Email\Adapters\Dummy;
 
-use Souptik\AIOMessaging\Email\Adapters\Email_Adapter;
+use Souptik\AllPathMessaging\Email\Adapters\Email_Adapter;
 use Utopia\Messaging\Adapter\Email;
 
-use const Souptik\AIOMessaging\Email\SLUG as EMAIL_SLUG;
+use const Souptik\AllPathMessaging\Email\SLUG as EMAIL_SLUG;
 
 /**
  * Adapter class.
@@ -69,12 +69,12 @@ class Adapter extends Email_Adapter {
 		// Return the settings fields.
 		return [
 			EMAIL_SLUG . '_' . SLUG . '_api_key_or_something' => [
-				'label'             => __( 'API KEY or Something else', 'all-in-one-messaging' ),
+				'label'             => __( 'API KEY or Something else', 'all-path-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			EMAIL_SLUG . '_' . SLUG . '_something_else'       => [
-				'label'             => __( 'Something else', 'all-in-one-messaging' ),
+				'label'             => __( 'Something else', 'all-path-messaging' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

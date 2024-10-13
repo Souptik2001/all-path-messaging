@@ -18,7 +18,7 @@ And that's how it provides **Limitless communication**! 🚀
 
 A big thank you to these open source projects, which play a crucial role in this project!
 
-- [Utopia Messaging](https://github.com/utopia-php/messaging) - This is literally the backbone of the project. More about it [here](https://github.com/Souptik2001/all-in-one-messaging?tab=readme-ov-file#special-mention-about-utopia-messaging-package-). 🔥
+- [Utopia Messaging](https://github.com/utopia-php/messaging) - This is literally the backbone of the project. More about it [here](https://github.com/Souptik2001/all-path-messaging?tab=readme-ov-file#special-mention-about-utopia-messaging-package-). 🔥
 - [Travelopia WordPress PHPCS Coding Standards](https://github.com/Travelopia/wordpress-coding-standards-phpcs) - Super cool PHPCS coding standard rules. ✨
 
 ## Quick Links
@@ -32,17 +32,17 @@ The main two ideas of the the plugin are -
 #### For Developers -
 
 - To give a simple easy to use  function to send **Email**, **SMS** or **Push Notifications** through the selected adapter.
-- Don't have your desired adapter? No need to wait for me! Go ahead and add the adapter yourself, by just a simple boilerplate code! [See how easy it is to add your own adapter](https://github.com/Souptik2001/all-in-one-messaging?tab=readme-ov-file#creating-your-own-adapter-%EF%B8%8F)!
+- Don't have your desired adapter? No need to wait for me! Go ahead and add the adapter yourself, by just a simple boilerplate code! [See how easy it is to add your own adapter](https://github.com/Souptik2001/all-path-messaging?tab=readme-ov-file#creating-your-own-adapter-%EF%B8%8F)!
 
 #### For users -
 
 - WordPress' default `wp_mail` doesn't deliver your mail reliably? Select any of the available adapters to override `wp_mail` to deliver mails reliably.
-- Already using some email marketing plugin? But not finding your desired provider? And tired of requesting the author to introduce the provider? 😣 - No worries! 🎉 - Have some developer friend, or some coding knowledge? [Learn how easy it is to add your own provider with a simple boilerplate code](https://github.com/Souptik2001/all-in-one-messaging?tab=readme-ov-file#creating-your-own-adapter-%EF%B8%8F)!
-  - TLDR; Keep using your favorite email marketing plugin, while routing the emails through **All in One Messaging** plugin! 🚀
+- Already using some email marketing plugin? But not finding your desired provider? And tired of requesting the author to introduce the provider? 😣 - No worries! 🎉 - Have some developer friend, or some coding knowledge? [Learn how easy it is to add your own provider with a simple boilerplate code](https://github.com/Souptik2001/all-path-messaging?tab=readme-ov-file#creating-your-own-adapter-%EF%B8%8F)!
+  - TLDR; Keep using your favorite email marketing plugin, while routing the emails through **All Path Messaging** plugin! 🚀
 
 ### Settings page ⚙️
 
-all-in-one-messaging provides different settings page for each service, under the "tools" menu -
+all-path-messaging provides different settings page for each service, under the "tools" menu -
 
 ![settings-location](./assets/images/settings-location.png)
 
@@ -54,7 +54,7 @@ The Email settings just have one extra settings, to choose whether to override t
 
 ![settings-email](./assets/images/settings-email.png)
 
-You are now all set to start using **All in One Messaging**! 🎉
+You are now all set to start using **All Path Messaging**! 🎉
 
 ### Services -
 
@@ -63,7 +63,7 @@ You are now all set to start using **All in One Messaging**! 🎉
 Send an email through a particular adapter (with headers 😉) -
 
 ```php
-\Souptik\AIOMessaging\Email\send(
+\Souptik\AllPathMessaging\Email\send(
   [ 'dev2@souptik.dev' ],
   'Yay its working!',
   'This is some long mail body.',
@@ -77,8 +77,8 @@ Send an email through a particular adapter (with headers 😉) -
     ],
    ],
    'attachments' => [
-    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
-     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
    ],
   ],
   'mailgun'
@@ -88,7 +88,7 @@ Send an email through a particular adapter (with headers 😉) -
 Just remove the last parameter! And now it uses the default selected adapter -
 
 ```php
-\Souptik\AIOMessaging\Email\send(
+\Souptik\AllPathMessaging\Email\send(
   [ 'dev2@souptik.dev' ],
   'Yay its working!',
   'This is some long mail body.',
@@ -102,8 +102,8 @@ Just remove the last parameter! And now it uses the default selected adapter -
     ],
    ],
    'attachments' => [
-    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
-     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
    ],
   ],
  );
@@ -130,20 +130,20 @@ For almost all the email marketing/managing tool there is an option to select ho
 ![default-mail-method-example-1](./assets/images/default-mail-method-example-1.png)
 ![default-mail-method-example-2](./assets/images/default-mail-method-example-2.png)
 
-If you are using any other mailer/method in these plugins, just change to this default option and see how seamlessly `all-in-one-messaging` hooks in and sends emails reliably through your selected adapter! 😎
+If you are using any other mailer/method in these plugins, just change to this default option and see how seamlessly `all-path-messaging` hooks in and sends emails reliably through your selected adapter! 😎
 
 #### SMS 📲
 
 Send a SMS through a particular adapter -
 
 ```php
-\Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+\Souptik\AllPathMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
 ```
 
 Just remove the last parameter! And now it uses the default selected adapter -
 
 ```php
-\Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
+\Souptik\AllPathMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
 ```
 
 #### Push notification 💬

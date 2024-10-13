@@ -2,10 +2,10 @@
 /**
  * SMS: Admin side things.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\SMS;
+namespace Souptik\AllPathMessaging\SMS;
 
 /**
  * Admin class.
@@ -70,7 +70,7 @@ class Admin {
 			}
 
 			// Output settings update message.
-			echo '<div class="updated"><p>' . esc_html__( 'Options saved.', 'all-in-one-messaging' ) . '</p></div>';
+			echo '<div class="updated"><p>' . esc_html__( 'Options saved.', 'all-path-messaging' ) . '</p></div>';
 		}
 
 		// Load template.

@@ -2,16 +2,16 @@
 /**
  * Email: WP-Mail: Namespace functions.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\WPMail;
+namespace Souptik\AllPathMessaging\Email\WPMail;
 
 use WP_Error;
 
-use function Souptik\AIOMessaging\Email\send;
+use function Souptik\AllPathMessaging\Email\send;
 
-use const Souptik\AIOMessaging\Email\SLUG;
+use const Souptik\AllPathMessaging\Email\SLUG;
 
 // Bootstrap the module!
 bootstrap();

@@ -2,16 +2,16 @@
 /**
  * Telesign adapter: Adapter class.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\SMS\Adapters\Telesign;
+namespace Souptik\AllPathMessaging\SMS\Adapters\Telesign;
 
-use Souptik\AIOMessaging\SMS\Adapters\SMS_Adapter;
+use Souptik\AllPathMessaging\SMS\Adapters\SMS_Adapter;
 use Utopia\Messaging\Adapter\SMS;
 use Utopia\Messaging\Adapter\SMS\Telesign;
 
-use const Souptik\AIOMessaging\SMS\SLUG as SMS_SLUG;
+use const Souptik\AllPathMessaging\SMS\SLUG as SMS_SLUG;
 
 /**
  * Adapter class.
@@ -64,12 +64,12 @@ class Adapter extends SMS_Adapter {
 		// Return the settings fields.
 		return [
 			SMS_SLUG . '_' . SLUG . '_customer_id' => [
-				'label'             => __( 'Customer ID', 'all-in-one-messaging' ),
+				'label'             => __( 'Customer ID', 'all-path-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			SMS_SLUG . '_' . SLUG . '_api_key'     => [
-				'label'             => __( 'API Key', 'all-in-one-messaging' ),
+				'label'             => __( 'API Key', 'all-path-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

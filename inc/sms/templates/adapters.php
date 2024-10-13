@@ -2,10 +2,10 @@
 /**
  * SMS adapters settings template.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\SMS;
+namespace Souptik\AllPathMessaging\SMS;
 
 // Get all the adapters.
 $adapters = get_adapters();
@@ -31,7 +31,7 @@ foreach ( $adapters as $key => $adapter ) {
 					<?php checked( get_option( SLUG . '_active_adapter', '' ), $key ); ?>
 				>
 				<label for="<?php echo esc_attr( $key ); ?>">
-					<?php esc_html_e( 'Set as default adapter', 'all-in-one-messaging' ); ?>
+					<?php esc_html_e( 'Set as default adapter', 'all-path-messaging' ); ?>
 				</label>
 			</td>
 		</tr>

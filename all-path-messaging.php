@@ -1,18 +1,18 @@
 <?php
 /**
- * Plugin Name: All in One Messaging
+ * Plugin Name: All Path Messaging
  * Description: Limitless Communication: All-in-One, super scalable, messaging Solution for WordPress.
  * Version: 1.0.0
  * Author: Souptik Datta
  * Author URI: https://souptik.dev
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: all-in-one-messaging
+ * Text Domain: all-path-messaging
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging;
+namespace Souptik\AllPathMessaging;
 
 define( 'SD_AIO_MESSAGING_PATH', untrailingslashit( __DIR__ ) );
 

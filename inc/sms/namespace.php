@@ -2,16 +2,16 @@
 /**
  * SMS: Namespace functions.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\SMS;
+namespace Souptik\AllPathMessaging\SMS;
 
-use Souptik\AIOMessaging\SMS\Adapters\SMS_Adapter;
+use Souptik\AllPathMessaging\SMS\Adapters\SMS_Adapter;
 use Utopia\Messaging\Messages\SMS;
 use WP_Error;
 
-const SLUG = 'wp_messaging_sms';
+const SLUG = 'all_path_sms';
 
 // Load different sms adapters.
 require_once SD_AIO_MESSAGING_PATH . '/inc/sms/adapters/twilio/namespace.php';
@@ -67,12 +67,12 @@ function autoload( string $class_name = '' ): void {
 function bootstrap(): void {
 	// Add this service to the list of available services.
 	add_filter(
-		'wp_messaging_services',
+		'all_path_services',
 		function ( array $services = [] ): array {
 			$services[] = [
-				'name'            => __( 'SMS: All in One Messaging', 'all-in-one-messaging' ),
+				'name'            => __( 'SMS: All Path Messaging', 'all-path-messaging' ),
 				'menu_slug'       => str_replace( '_', '-', SLUG ),
-				'menu_capability' => apply_filters( 'wp_messaging_sms_user_capability', 'manage_options' ),
+				'menu_capability' => apply_filters( 'all_path_sms_user_capability', 'manage_options' ),
 				'menu_renderer'   => [ Admin::get_instance(), 'options_page' ],
 			];
 
@@ -87,10 +87,10 @@ function bootstrap(): void {
  *
  * Add new adapter like this -
  * add_filter(
- *     \Souptik\AIOMessaging\SMS\SLUG . '_adapters',
+ *     \Souptik\AllPathMessaging\SMS\SLUG . '_adapters',
  *     function( array $adapters = [] ): array {
  *          $adapters[ 'your_adapter' ] = [
- *              'name'    => __( 'Your Adapter', 'all-in-one-messaging' ),
+ *              'name'    => __( 'Your Adapter', 'all-path-messaging' ),
  *              'adapter' => new Your_Adapter_Class(),
  *              'options' => Your_Adapter_Class::get_settings_fields(),
  *          ];
@@ -187,7 +187,7 @@ function send( array $to = [], string $message = '', string $adapter = '' ): arr
 
 	// Return early if adapter not found.
 	if ( empty( $adapters[ $adapter ] ) ) {
-		return new WP_Error( 'adapter_not_found', __( 'Adapter not found.', 'all-in-one-messaging' ) );
+		return new WP_Error( 'adapter_not_found', __( 'Adapter not found.', 'all-path-messaging' ) );
 	}
 
 	// Get the adapter.
@@ -195,7 +195,7 @@ function send( array $to = [], string $message = '', string $adapter = '' ): arr
 
 	// Return early if adapter not configured properly.
 	if ( null === $adapter_object ) {
-		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'all-in-one-messaging' ) );
+		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'all-path-messaging' ) );
 	}
 
 	// Initialize the message.

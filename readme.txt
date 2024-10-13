@@ -1,4 +1,4 @@
-=== All in One Messaging ===
+=== All Path Messaging ===
 Contributors: souptik
 Tags: messaging, email, sms, push-notification
 Requires at least: 4.4
@@ -12,7 +12,7 @@ Limitless Communication: All-in-one, super scalable, messaging Solution for Word
 
 == Description ==
 
-[Check out the Github Repository ♥](https://github.com/Souptik2001/all-in-one-messaging)
+[Check out the Github Repository ♥](https://github.com/Souptik2001/all-path-messaging)
 
 **Limitless Communication:** All-in-one, super scalable, messaging Solution for WordPress.
 
@@ -44,7 +44,7 @@ And that's how it provides **Limitless communication**! 🚀
 Send an email through a particular adapter (with headers 😉) -
 
 `
-\Souptik\AIOMessaging\Email\send(
+\Souptik\AllPathMessaging\Email\send(
   [ 'dev2@souptik.dev' ],
   'Yay its working!',
   'This is some long mail body.',
@@ -58,8 +58,8 @@ Send an email through a particular adapter (with headers 😉) -
     ],
    ],
    'attachments' => [
-    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
-     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
    ],
   ],
   'mailgun'
@@ -69,7 +69,7 @@ Send an email through a particular adapter (with headers 😉) -
 Just remove the last parameter! And now it uses the default selected adapter -
 
 `
-\Souptik\AIOMessaging\Email\send(
+\Souptik\AllPathMessaging\Email\send(
   [ 'dev2@souptik.dev' ],
   'Yay its working!',
   'This is some long mail body.',
@@ -83,8 +83,8 @@ Just remove the last parameter! And now it uses the default selected adapter -
     ],
    ],
    'attachments' => [
-    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
-     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+    trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
+     'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
    ],
   ],
  );
@@ -107,13 +107,13 @@ wp_mail(
 Send a SMS through a particular adapter -
 
 `
-\Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+\Souptik\AllPathMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
 `
 
 Just remove the last parameter! And now it uses the default selected adapter -
 
 `
-\Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
+\Souptik\AllPathMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
 `
 
 ### Creating your own adapter 🛠️
@@ -157,7 +157,7 @@ Consider that as the starting point and let's understand what each file does.
 
 == Installation ==
 
-Upload 'all-in-one-messaging' to the '/wp-content/plugins/' directory.
+Upload 'all-path-messaging' to the '/wp-content/plugins/' directory.
 
 Activate the plugin through the 'Plugins' menu in WordPress.
 

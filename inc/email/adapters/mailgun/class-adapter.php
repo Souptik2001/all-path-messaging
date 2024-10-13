@@ -2,16 +2,16 @@
 /**
  * Mailgun adapter: Adapter class.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters\Mailgun;
+namespace Souptik\AllPathMessaging\Email\Adapters\Mailgun;
 
-use Souptik\AIOMessaging\Email\Adapters\Email_Adapter;
+use Souptik\AllPathMessaging\Email\Adapters\Email_Adapter;
 use Utopia\Messaging\Adapter\Email;
 use Utopia\Messaging\Adapter\Email\Mailgun;
 
-use const Souptik\AIOMessaging\Email\SLUG as EMAIL_SLUG;
+use const Souptik\AllPathMessaging\Email\SLUG as EMAIL_SLUG;
 
 /**
  * Adapter class.
@@ -64,12 +64,12 @@ class Adapter extends Email_Adapter {
 		// Return the settings fields.
 		return [
 			EMAIL_SLUG . '_' . SLUG . '_api_key' => [
-				'label'             => __( 'API KEY', 'all-in-one-messaging' ),
+				'label'             => __( 'API KEY', 'all-path-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			EMAIL_SLUG . '_' . SLUG . '_domain'  => [
-				'label'             => __( 'Domain', 'all-in-one-messaging' ),
+				'label'             => __( 'Domain', 'all-path-messaging' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

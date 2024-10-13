@@ -2,10 +2,10 @@
 /**
  * SMS Adapter: SMS_Adapter class.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\SMS\Adapters;
+namespace Souptik\AllPathMessaging\SMS\Adapters;
 
 use Utopia\Messaging\Adapter\SMS;
 

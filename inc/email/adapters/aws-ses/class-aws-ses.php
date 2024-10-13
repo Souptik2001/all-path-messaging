@@ -2,10 +2,10 @@
 /**
  * AWS SES adapter: Main Sender.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters\AWS_SES;
+namespace Souptik\AllPathMessaging\Email\Adapters\AWS_SES;
 
 use Exception;
 use Utopia\Messaging\Adapter\Email as EmailAdapter;

@@ -1,5 +1,5 @@
 {
-  "name": "all-in-one-messaging",
+  "name": "all-path-messaging",
   "version": "1.0.0",
   "description": "Limitless Communication: All-in-One, super scalable, messaging Solution for WordPress.",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Souptik2001/all-in-one-messaging.git"
+    "url": "git+https://github.com/Souptik2001/all-path-messaging.git"
   },
   "author": "Souptik Datta",
   "license": "ISC",
@@ -24,5 +24,5 @@
   "bugs": {
     "url": "https://github.com/Souptik2001/wp-messaging/issues"
   },
-  "homepage": "https://github.com/Souptik2001/all-in-one-messaging#readme"
+  "homepage": "https://github.com/Souptik2001/all-path-messaging#readme"
 }

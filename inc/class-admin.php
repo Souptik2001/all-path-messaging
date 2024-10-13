@@ -2,10 +2,10 @@
 /**
  * Admin side things.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging;
+namespace Souptik\AllPathMessaging;
 
 /**
  * Admin class.

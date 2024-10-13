@@ -2,16 +2,16 @@
 /**
  * Twilio adapter: Adapter class.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\SMS\Adapters\Twilio;
+namespace Souptik\AllPathMessaging\SMS\Adapters\Twilio;
 
-use Souptik\AIOMessaging\SMS\Adapters\SMS_Adapter;
+use Souptik\AllPathMessaging\SMS\Adapters\SMS_Adapter;
 use Utopia\Messaging\Adapter\SMS;
 use Utopia\Messaging\Adapter\SMS\Twilio;
 
-use const Souptik\AIOMessaging\SMS\SLUG as SMS_SLUG;
+use const Souptik\AllPathMessaging\SMS\SLUG as SMS_SLUG;
 
 /**
  * Adapter class.
@@ -66,17 +66,17 @@ class Adapter extends SMS_Adapter {
 		// Return the settings fields.
 		return [
 			SMS_SLUG . '_' . SLUG . '_account_sid' => [
-				'label'             => __( 'Account SID', 'all-in-one-messaging' ),
+				'label'             => __( 'Account SID', 'all-path-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			SMS_SLUG . '_' . SLUG . '_auth_token'  => [
-				'label'             => __( 'Auth Token', 'all-in-one-messaging' ),
+				'label'             => __( 'Auth Token', 'all-path-messaging' ),
 				'type'              => 'password',
 				'sanitize_callback' => 'sanitize_text_field',
 			],
 			SMS_SLUG . '_' . SLUG . '_from'        => [
-				'label'             => __( 'From phone number', 'all-in-one-messaging' ),
+				'label'             => __( 'From phone number', 'all-path-messaging' ),
 				'type'              => 'text',
 				'sanitize_callback' => 'sanitize_text_field',
 			],

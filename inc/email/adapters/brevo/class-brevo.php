@@ -2,10 +2,10 @@
 /**
  * Brevo adapter: Main Sender.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters\Brevo;
+namespace Souptik\AllPathMessaging\Email\Adapters\Brevo;
 
 use Exception;
 use Utopia\Messaging\Adapter\Email as EmailAdapter;

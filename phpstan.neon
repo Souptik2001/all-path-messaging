@@ -1,7 +1,7 @@
 parameters:
 	level: max
 	scanFiles:
-	  - all-in-one-messaging.php
+	  - all-path-messaging.php
 	bootstrapFiles:
 	  - .tests/static-analysis/bootstrap.php
 	scanDirectories:

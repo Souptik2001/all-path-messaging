@@ -2,17 +2,17 @@
 /**
  * Email: Namespace functions.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email;
+namespace Souptik\AllPathMessaging\Email;
 
-use Souptik\AIOMessaging\Email\Adapters\Email_Adapter;
+use Souptik\AllPathMessaging\Email\Adapters\Email_Adapter;
 use Utopia\Messaging\Messages\Email;
 use Utopia\Messaging\Messages\Email\Attachment;
 use WP_Error;
 
-const SLUG = 'wp_messaging_email';
+const SLUG = 'all_path_email';
 
 // Load different email adapters.
 require_once SD_AIO_MESSAGING_PATH . '/inc/email/adapters/mailgun/namespace.php';
@@ -72,12 +72,12 @@ function autoload( string $class_name = '' ): void {
 function bootstrap(): void {
 	// Add this service to the list of available services.
 	add_filter(
-		'wp_messaging_services',
+		'all_path_services',
 		function ( array $services = [] ): array {
 			$services[] = [
-				'name'            => __( 'Email: All in One Messaging', 'all-in-one-messaging' ),
+				'name'            => __( 'Email: All Path Messaging', 'all-path-messaging' ),
 				'menu_slug'       => str_replace( '_', '-', SLUG ),
-				'menu_capability' => apply_filters( 'wp_messaging_email_user_capability', 'manage_options' ),
+				'menu_capability' => apply_filters( 'all_path_email_user_capability', 'manage_options' ),
 				'menu_renderer'   => [ Admin::get_instance(), 'options_page' ],
 			];
 
@@ -92,10 +92,10 @@ function bootstrap(): void {
  *
  * Add new adapter like this -
  * add_filter(
- *     \Souptik\AIOMessaging\Email\SLUG . '_adapters',
+ *     \Souptik\AllPathMessaging\Email\SLUG . '_adapters',
  *     function( array $adapters = [] ): array {
  *          $adapters[ 'your_adapter' ] = [
- *              'name'    => __( 'Your Adapter', 'all-in-one-messaging' ),
+ *              'name'    => __( 'Your Adapter', 'all-path-messaging' ),
  *              'adapter' => new Your_Adapter_Class(),
  *              'options' => Your_Adapter_Class::get_settings_fields(),
  *          ];
@@ -203,12 +203,12 @@ function send( array $to = [], string $subject = '', string $body = '', string $
 
 	// Return early if adapter not found.
 	if ( empty( $adapters[ $adapter ] ) ) {
-		return new WP_Error( 'adapter_not_found', __( 'Adapter not found.', 'all-in-one-messaging' ) );
+		return new WP_Error( 'adapter_not_found', __( 'Adapter not found.', 'all-path-messaging' ) );
 	}
 
 	// Check for email common settings.
 	if ( empty( $from_name ) || empty( $from_email ) ) {
-		return new WP_Error( 'email_common_settings_not_configured', __( 'Email common settings not configured properly.', 'all-in-one-messaging' ) );
+		return new WP_Error( 'email_common_settings_not_configured', __( 'Email common settings not configured properly.', 'all-path-messaging' ) );
 	}
 
 	// Get the adapter.
@@ -216,7 +216,7 @@ function send( array $to = [], string $subject = '', string $body = '', string $
 
 	// Return early if adapter not configured properly.
 	if ( null === $adapter_object ) {
-		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'all-in-one-messaging' ) );
+		return new WP_Error( 'adapter_not_configured', __( 'Adapter not configured.', 'all-path-messaging' ) );
 	}
 
 	// Get the headers.

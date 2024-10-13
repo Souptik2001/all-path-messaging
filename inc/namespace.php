@@ -2,10 +2,10 @@
 /**
  * Namespace functions.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging;
+namespace Souptik\AllPathMessaging;
 
 // Bootstrap the plugin!
 spl_autoload_register( __NAMESPACE__ . '\\autoload' );
@@ -73,12 +73,12 @@ function bootstrap(): void {
  *
  * Add new service like this -
  * add_filter(
- *     'wp_messaging_services',
+ *     'all_path_services',
  *     function ( array $services = [] ): array {
  *         $services[] = [
- *             'name'            => __( 'SMS: All in One Messaging', 'all-in-one-messaging' ),
+ *             'name'            => __( 'SMS: All Path Messaging', 'all-path-messaging' ),
  *             'menu_slug'       => str_replace( '_', '-', SLUG ),
- *             'menu_capability' => apply_filters( 'wp_messaging_sms_user_capability', 'manage_options' ),
+ *             'menu_capability' => apply_filters( 'all_path_sms_user_capability', 'manage_options' ),
  *             'menu_renderer'   => [ Admin::get_instance(), 'options_page' ],
  *         ];
  *
@@ -95,7 +95,7 @@ function bootstrap(): void {
  */
 function get_services(): array {
 	// Get all services.
-	$services = (array) apply_filters( 'wp_messaging_services', [] );
+	$services = (array) apply_filters( 'all_path_services', [] );
 
 	// Filtered services.
 	$filtered_services = [];

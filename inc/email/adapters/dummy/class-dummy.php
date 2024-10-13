@@ -4,10 +4,10 @@
  *
  * This file will not be present if Utopia provides the adapter you are looking for. Just use that!
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters\Dummy;
+namespace Souptik\AllPathMessaging\Email\Adapters\Dummy;
 
 use Exception;
 use Utopia\Messaging\Adapter\Email as EmailAdapter;

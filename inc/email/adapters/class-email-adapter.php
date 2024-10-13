@@ -2,10 +2,10 @@
 /**
  * Email Adapter: Email_Adapter class.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters;
+namespace Souptik\AllPathMessaging\Email\Adapters;
 
 use Utopia\Messaging\Adapter\Email;
 

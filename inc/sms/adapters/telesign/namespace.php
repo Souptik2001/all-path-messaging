@@ -2,12 +2,12 @@
 /**
  * Telesign adapter: Namespace functions.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\SMS\Adapters\Telesign;
+namespace Souptik\AllPathMessaging\SMS\Adapters\Telesign;
 
-use const Souptik\AIOMessaging\SMS\SLUG as SMS_SLUG;
+use const Souptik\AllPathMessaging\SMS\SLUG as SMS_SLUG;
 
 const SLUG = 'telesign';
 
@@ -26,7 +26,7 @@ function bootstrap(): void {
 		function ( array $adapters = [] ): array {
 			// Add the adapter.
 			$adapters[ SLUG ] = [
-				'name'    => __( 'Telesign', 'all-in-one-messaging' ),
+				'name'    => __( 'Telesign', 'all-path-messaging' ),
 				'adapter' => new Adapter(),
 				'options' => Adapter::get_settings_fields(),
 			];

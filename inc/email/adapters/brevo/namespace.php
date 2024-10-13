@@ -2,12 +2,12 @@
 /**
  * Brevo adapter: Namespace functions.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters\Brevo;
+namespace Souptik\AllPathMessaging\Email\Adapters\Brevo;
 
-use const Souptik\AIOMessaging\Email\SLUG as EMAIL_SLUG;
+use const Souptik\AllPathMessaging\Email\SLUG as EMAIL_SLUG;
 
 const SLUG = 'brevo';
 
@@ -26,7 +26,7 @@ function bootstrap(): void {
 		function ( array $adapters = [] ): array {
 			// Add the adapter.
 			$adapters[ SLUG ] = [
-				'name'    => __( 'Brevo', 'all-in-one-messaging' ),
+				'name'    => __( 'Brevo', 'all-path-messaging' ),
 				'adapter' => new Adapter(),
 				'options' => Adapter::get_settings_fields(),
 			];

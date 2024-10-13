@@ -1,19 +1,19 @@
 <?php
 /**
- * Plugin Name: Test MU Plugin for all-in-one-messaging.
+ * Plugin Name: Test MU Plugin for all-path-messaging.
  *
  * This mu-plugin contains test for each service's each adapter.
  * Just un-comment the one you want to test and see it in action.
  * Please change the input values as required.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
 /**
  * SMS: Default adapter Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
+// 	$test = \Souptik\AllPathMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!' );
 // 	echo '<h4>SMS: Default Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );
@@ -25,7 +25,7 @@
  * SMS: Twilio Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
+// 	$test = \Souptik\AllPathMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'twilio' );
 // 	echo '<h4>SMS: Twilio Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );
@@ -37,7 +37,7 @@
  * SMS: Telesign Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\AIOMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'telesign' );
+// 	$test = \Souptik\AllPathMessaging\SMS\send( [ '+xxxxxxxxxxxx' ], 'Yay its working!', 'telesign' );
 // 	echo '<h4>SMS: Telesign Messaging -- Triggered from `test-mu-plugin`</h4>';
 // 	echo '<pre>';
 // 	print_r( $test );
@@ -67,7 +67,7 @@
  * Email: Default adapter Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\AIOMessaging\Email\send(
+// 	$test = \Souptik\AllPathMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'This is some long mail body.',
@@ -83,7 +83,7 @@
  * Email: Mailgun Messaging.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\AIOMessaging\Email\send(
+// 	$test = \Souptik\AllPathMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'<h1>This is some long mail body.</h1>',
@@ -103,7 +103,7 @@
  * Email: Mailgun Messaging - with headers.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\AIOMessaging\Email\send(
+// 	$test = \Souptik\AllPathMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'This is some long mail body.',
@@ -117,8 +117,8 @@
 // 				],
 // 			],
 // 			'attachments' => [
-// 				trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
-// 		 		'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+// 				trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
+// 		 		'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
 // 			],
 // 		],
 // 		'mailgun'
@@ -134,7 +134,7 @@
  * Email: Brevo Messaging - with headers.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\AIOMessaging\Email\send(
+// 	$test = \Souptik\AllPathMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'This is some long mail body.',
@@ -151,7 +151,7 @@
 // 			],
 // 			'attachments' => [
 // 				// For Brevo only few supported file types are allowed, for example PHP is not supported.
-// 		 		'SameFileDifferentName.txt' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+// 		 		'SameFileDifferentName.txt' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
 // 			],
 // 		],
 // 		'brevo'
@@ -167,7 +167,7 @@
  * Email: AWS SES Messaging - with headers.
  */
 // add_action( 'init', function () {
-// 	$test = \Souptik\AIOMessaging\Email\send(
+// 	$test = \Souptik\AllPathMessaging\Email\send(
 // 		[ 'dev2@souptik.dev' ],
 // 		'Yay its working!',
 // 		'<strong>This is some</strong> long mail body.',
@@ -183,7 +183,7 @@
 // 				],
 // 			],
 // 			'attachments' => [
-// 		 		'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-in-one-messaging.php',
+// 		 		'SameFileDifferentName.php' => trailingslashit( WP_CONTENT_DIR ) . '/mu-plugins/test-all-path-messaging.php',
 // 			],
 // 		],
 // 		'aws_ses'

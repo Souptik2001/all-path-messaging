@@ -2,12 +2,12 @@
 /**
  * Mailgun adapter: Namespace functions.
  *
- * @package all-in-one-messaging
+ * @package all-path-messaging
  */
 
-namespace Souptik\AIOMessaging\Email\Adapters\Mailgun;
+namespace Souptik\AllPathMessaging\Email\Adapters\Mailgun;
 
-use const Souptik\AIOMessaging\Email\SLUG as EMAIL_SLUG;
+use const Souptik\AllPathMessaging\Email\SLUG as EMAIL_SLUG;
 
 const SLUG = 'mailgun';
 
@@ -26,7 +26,7 @@ function bootstrap(): void {
 		function ( array $adapters = [] ): array {
 			// Add the adapter.
 			$adapters[ SLUG ] = [
-				'name'    => __( 'Mailgun', 'all-in-one-messaging' ),
+				'name'    => __( 'Mailgun', 'all-path-messaging' ),
 				'adapter' => new Adapter(),
 				'options' => Adapter::get_settings_fields(),
 			];
