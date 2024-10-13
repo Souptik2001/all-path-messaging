@@ -31,6 +31,7 @@ rm -f .wp-env.json
 rm -f LICENSE
 rm -f package.json
 rm -f package-lock.json
+rm -f composer.lock
 rm -f phpcs.xml
 rm -f phpstan.neon
 rm -rf node_modules
