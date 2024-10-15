@@ -214,7 +214,6 @@ If you are non-tech! - Please create an [issue](https://github.com/Souptik2001/w
 
 1. WordPress Options (Email)
 2. WordPress Options (SMS)
-3. WordPress Options (Push notifications)
 
 == Changelog ==
 
