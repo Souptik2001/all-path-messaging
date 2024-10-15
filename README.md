@@ -1,6 +1,8 @@
-# WordPress messaging
+# All Path messaging
 
 ![GitHub Actions](https://github.com/Souptik2001/wp-messaging/workflows/Coding%20Standards%20and%20Static%20Analysis/badge.svg)
+
+[Download the WP Plugin ♥](https://wordpress.org/plugins/all-path-messaging/)
 
 Limitless Communication: All-in-one, super scalable, messaging Solution for WordPress.
 
