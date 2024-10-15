@@ -4,7 +4,7 @@
  * Description: Limitless Communication: All-in-One, super scalable, messaging Solution for WordPress.
  * Version: 1.0.0
  * Author: Souptik Datta
- * Author URI: https://souptik.dev
+ * Author URI: https://profiles.wordpress.org/souptik/
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: all-path-messaging
