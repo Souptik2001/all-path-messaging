@@ -20,7 +20,7 @@ rm -rf *
 # Copy the main branch content to built branch.
 cp -r $HOME/parent-branch/* .
 
-cp -r ./assets/images/* .
+cp -r ./assets/screenshots/* ./assets/
 
 # Cleanup.
 rm -f README.md
