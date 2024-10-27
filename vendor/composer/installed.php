@@ -3,7 +3,7 @@
         'name' => 'souptik/all-path-messaging',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '63bcd918aa9ef6c3ae0b9953c3166bf113484d28',
+        'reference' => 'c1fabf5a4b77c33adc27ee8bfa910c865bb12113',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -130,7 +130,7 @@
         'souptik/all-path-messaging' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '63bcd918aa9ef6c3ae0b9953c3166bf113484d28',
+            'reference' => 'c1fabf5a4b77c33adc27ee8bfa910c865bb12113',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
